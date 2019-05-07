@@ -1,6 +1,13 @@
 {
   "name": "advanced-poe-filter-parser",
   "version": "0.0.1",
+  "keywords": [
+    "path-of-exile",
+    "filter-of-kalandra",
+    "pag"
+  ],
+  "homepage": "https://github.com/isuke/advanced-poe-filter-parser",
+  "repository": "git@github.com:isuke/advanced-poe-filter-parser.git",
   "main": "lib/parser.js",
   "author": "isuke <isuke770@gmail.com>",
   "license": "CC-BY-NC-ND-4.0",
