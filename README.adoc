@@ -1,0 +1,20 @@
+:chapter-label:
+:icons: font
+:lang: en
+:sectanchors:
+:sectlinks:
+:sectnums:
+:sectnumlevels: 1
+:source-highlighter: highlightjs
+:toc: preamble
+:toclevels: 1
+
+= Advanced PoE Filter Parser image:https://travis-ci.org/isuke/advanced-poe-filter-parser.svg?branch=master["Build Status", link="https://travis-ci.org/isuke/advanced-poe-filter-parser"]
+
+== Usage
+
+```js
+import { parse, SyntaxError } from "advanced-poe-filter-parser"
+
+const object = parse("foobar")
+```
