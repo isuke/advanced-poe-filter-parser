@@ -4,6 +4,7 @@ yarn-error.log
 .npmrc
 
 lib/*
+!lib/*.d.ts
 !/**/.keep
 
 # I use README.adoc.
