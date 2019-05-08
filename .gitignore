@@ -3,7 +3,7 @@ yarn-error.log
 
 .npmrc
 
-lib/*
+# lib/*
 !/**/.keep
 
 # I use README.adoc.
