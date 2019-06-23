@@ -243,7 +243,7 @@ Unset "Section6"
         SetBorderColor: { rgb: { r: 100, g: 101, b: 102 }, alpha: 200 },
         SetTextColor: { rgb: { r: 103, g: 104, b: 105 }, alpha: 201 },
         SetBackgroundColor: { rgb: { r: 106, g: 107, b: 108 }, alpha: 202 },
-        PlayAlertSound: { id: '2', volume: 150 },
+        PlayAlertSound: { id: '2', volume: undefined },
         MinimapIcon: { size: 'Medium', color: 'Red', shape: 'Circle' },
         PlayEffect: { color: 'Blue', temp: true },
       },
@@ -297,7 +297,7 @@ Unset "Section6"
         SetTextColor: { function: 'Whiten', val: 0.31 },
         SetBackgroundColor: { function: 'Blacken', val: 1 },
         SetFontSize: { function: 'Minus', val: 6 },
-        PlayAlertSoundPositional: { id: 'ShBlessed', volume: 150 },
+        PlayAlertSoundPositional: { id: 'ShBlessed', volume: undefined },
       },
       branches: [],
       location: {
