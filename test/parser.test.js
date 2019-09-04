@@ -121,6 +121,8 @@ Show "Section1"
     Corrupted      True
     Identified     True
     ShapedMap      True
+    ElderMap       True
+    BlightedMap    True
     Height         > 1
     Width          > 2
     HasExplicitMod "Piyo"
@@ -196,6 +198,8 @@ Unset "Section6"
         Corrupted: true,
         Identified: true,
         ShapedMap: true,
+        ElderMap: true,
+        BlightedMap: true,
         Height: '> 1',
         Width: '> 2',
         HasExplicitMod: ['Piyo'],
@@ -221,9 +225,9 @@ Unset "Section6"
           offset: 0,
         },
         end: {
-          line: 36,
+          line: 38,
           column: 1,
-          offset: 1014,
+          offset: 1062,
         },
       },
     },
@@ -250,14 +254,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 36,
+          line: 38,
           column: 1,
-          offset: 1014,
+          offset: 1062,
         },
         end: {
-          line: 49,
+          line: 51,
           column: 1,
-          offset: 1563,
+          offset: 1611,
         },
       },
     },
@@ -276,14 +280,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 49,
+          line: 51,
           column: 1,
-          offset: 1563,
+          offset: 1611,
         },
         end: {
-          line: 55,
+          line: 57,
           column: 1,
-          offset: 1780,
+          offset: 1828,
         },
       },
     },
@@ -302,14 +306,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 55,
+          line: 57,
           column: 1,
-          offset: 1780,
+          offset: 1828,
         },
         end: {
-          line: 61,
+          line: 63,
           column: 1,
-          offset: 1998,
+          offset: 2046,
         },
       },
     },
@@ -326,14 +330,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 61,
+          line: 63,
           column: 1,
-          offset: 1998,
+          offset: 2046,
         },
         end: {
-          line: 65,
+          line: 67,
           column: 1,
-          offset: 2140,
+          offset: 2188,
         },
       },
     },
@@ -349,14 +353,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 65,
+          line: 67,
           column: 1,
-          offset: 2140,
+          offset: 2188,
         },
         end: {
-          line: 68,
+          line: 70,
           column: 1,
-          offset: 2246,
+          offset: 2294,
         },
       },
     },

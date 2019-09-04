@@ -101,6 +101,8 @@ condition =
   / conditionCorrupted
   / conditionIdentified
   / conditionShapedMap
+  / conditionElderMap
+  / conditionBlightedMap
   / conditionHeight
   / conditionWidth
   / conditionHasExplicitMod
@@ -128,6 +130,8 @@ conditionSynthesisedItem = attr:'SynthesisedItem' __ val:conditionValueBoolean  
 conditionCorrupted      = attr:'Corrupted'      __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
 conditionIdentified     = attr:'Identified'     __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
 conditionShapedMap      = attr:'ShapedMap'      __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
+conditionElderMap       = attr:'ElderMap'       __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
+conditionBlightedMap    = attr:'BlightedMap'    __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
 conditionHeight         = attr:'Height'         __ val:conditionValueNumber     { return { lineType: 'condition', attr, val} }
 conditionWidth          = attr:'Width'          __ val:conditionValueNumber     { return { lineType: 'condition', attr, val} }
 conditionHasExplicitMod = attr:'HasExplicitMod' __ val:conditionValueArray      { return { lineType: 'condition', attr, val} }
