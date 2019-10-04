@@ -28,7 +28,7 @@ test('parse : blank and comment lines', (t) => {
       name: 'Hide Map Section',
       activity: 'Hide',
       conditions: {
-        Class: ['Maps'],
+        Class: { ope: '=', vals: ['Maps'] },
         MapTier: '<= 4',
       },
       actions: {},
@@ -51,7 +51,7 @@ test('parse : blank and comment lines', (t) => {
       name: 'Flask Section',
       activity: 'Show',
       conditions: {
-        Class: ['Life Flasks', 'Mana Flasks', 'Hybrid Flasks'],
+        Class: { ope: '=', vals: ['Life Flasks', 'Mana Flasks', 'Hybrid Flasks'] },
       },
       actions: {
         SetBorderColor: { rgb: { r: 250, g: 251, b: 252 }, alpha: 255 },
@@ -103,7 +103,7 @@ test('parse : all actions and conditions', (t) => {
 Show "Section1"
     Class          "Maps"
     BaseType       "Sacrificial Garb"
-    Prophecy       "Foo"
+    Prophecy       == "Foo"
     DropLevel      > 85
     ItemLevel      >= 70
     GemLevel       = 10
@@ -178,9 +178,9 @@ Unset "Section6"
       name: 'Section1',
       activity: 'Show',
       conditions: {
-        Class: ['Maps'],
-        BaseType: ['Sacrificial Garb'],
-        Prophecy: ['Foo'],
+        Class: { ope: '=', vals: ['Maps'] },
+        BaseType: { ope: '=', vals: ['Sacrificial Garb'] },
+        Prophecy: { ope: '==', vals: ['Foo'] },
         DropLevel: '> 85',
         ItemLevel: '>= 70',
         GemLevel: '= 10',
@@ -202,9 +202,9 @@ Unset "Section6"
         BlightedMap: true,
         Height: '> 1',
         Width: '> 2',
-        HasExplicitMod: ['Piyo'],
+        HasExplicitMod: { ope: '=', vals: ['Piyo'] },
         AnyEnchantment: true,
-        HasEnchantment: ['Enchantment Decree of Force'],
+        HasEnchantment: { ope: '=', vals: ['Enchantment Decree of Force'] },
       },
       actions: {
         SetBorderColor: { rgb: { r: 100, g: 101, b: 102 }, alpha: 255 },
@@ -227,7 +227,7 @@ Unset "Section6"
         end: {
           line: 38,
           column: 1,
-          offset: 1062,
+          offset: 1065,
         },
       },
     },
@@ -236,12 +236,12 @@ Unset "Section6"
       name: 'Section2',
       activity: 'Show',
       conditions: {
-        Class: ['Life Flasks', 'Mana Flasks', 'Hybrid Flasks'],
-        BaseType: ['Two-Toned Boots', 'Spiked Gloves', 'Gripped Gloves', 'Fingerless Silk Gloves', 'Bone Helmet'],
-        Prophecy: ['Foo', 'Bar'],
+        Class: { ope: '=', vals: ['Life Flasks', 'Mana Flasks', 'Hybrid Flasks'] },
+        BaseType: { ope: '=', vals: ['Two-Toned Boots', 'Spiked Gloves', 'Gripped Gloves', 'Fingerless Silk Gloves', 'Bone Helmet'] },
+        Prophecy: { ope: '=', vals: ['Foo', 'Bar'] },
         SocketGroup: 'W',
         Rarity: 'Rare',
-        HasExplicitMod: ['Piyo', 'Piyo'],
+        HasExplicitMod: { ope: '=', vals: ['Piyo', 'Piyo'] },
       },
       actions: {
         SetBorderColor: { rgb: { r: 100, g: 101, b: 102 }, alpha: 200 },
@@ -256,12 +256,12 @@ Unset "Section6"
         start: {
           line: 38,
           column: 1,
-          offset: 1062,
+          offset: 1065,
         },
         end: {
           line: 51,
           column: 1,
-          offset: 1611,
+          offset: 1614,
         },
       },
     },
@@ -282,12 +282,12 @@ Unset "Section6"
         start: {
           line: 51,
           column: 1,
-          offset: 1611,
+          offset: 1614,
         },
         end: {
           line: 57,
           column: 1,
-          offset: 1828,
+          offset: 1831,
         },
       },
     },
@@ -308,12 +308,12 @@ Unset "Section6"
         start: {
           line: 57,
           column: 1,
-          offset: 1828,
+          offset: 1831,
         },
         end: {
           line: 63,
           column: 1,
-          offset: 2046,
+          offset: 2049,
         },
       },
     },
@@ -332,12 +332,12 @@ Unset "Section6"
         start: {
           line: 63,
           column: 1,
-          offset: 2046,
+          offset: 2049,
         },
         end: {
           line: 67,
           column: 1,
-          offset: 2188,
+          offset: 2191,
         },
       },
     },
@@ -355,12 +355,12 @@ Unset "Section6"
         start: {
           line: 67,
           column: 1,
-          offset: 2188,
+          offset: 2191,
         },
         end: {
           line: 70,
           column: 1,
-          offset: 2294,
+          offset: 2297,
         },
       },
     },
@@ -421,7 +421,7 @@ Show "Map Section"
       name: 'Map Section',
       activity: 'Show',
       conditions: {
-        Class: ['Maps'],
+        Class: { ope: '=', vals: ['Maps'] },
         MapTier: '> 3',
       },
       actions: {
@@ -470,7 +470,7 @@ Hide "Remain Section"
       name: 'Hide Map Section',
       activity: 'Hide',
       conditions: {
-        Class: ['Maps'],
+        Class: { ope: '=', vals: ['Maps'] },
         MapTier: '<= 4',
       },
       actions: {},
@@ -493,7 +493,7 @@ Hide "Remain Section"
       name: 'Flask Section',
       activity: 'Show',
       conditions: {
-        Class: ['Life Flasks', 'Mana Flasks', 'Hybrid Flasks'],
+        Class: { ope: '=', vals: ['Life Flasks', 'Mana Flasks', 'Hybrid Flasks'] },
       },
       actions: {
         SetBorderColor: { rgb: { r: 250, g: 251, b: 252 }, alpha: 255 },
@@ -564,7 +564,7 @@ Show "Map Section"
       name: 'Map Section',
       activity: 'Show',
       conditions: {
-        Class: ['Maps'],
+        Class: { ope: '=', vals: ['Maps'] },
         MapTier: '> 3',
       },
       actions: {
@@ -675,7 +675,7 @@ Show "Map Section"
       name: 'Map Section',
       activity: 'Show',
       conditions: {
-        Class: ['Maps'],
+        Class: { ope: '=', vals: ['Maps'] },
         MapTier: '> 3',
       },
       actions: {
@@ -791,7 +791,9 @@ Show "Map Section"
       id: '0005',
       name: 'Map Section',
       activity: 'Show',
-      conditions: { Class: ['Maps'] },
+      conditions: {
+        Class: { ope: '=', vals: ['Maps'] },
+      },
       actions: {},
       branches: [
         {
@@ -960,7 +962,9 @@ Show "Map Section"
       id: '0005',
       name: 'Map Section',
       activity: 'Show',
-      conditions: { Class: ['Maps'] },
+      conditions: {
+        Class: { ope: '=', vals: ['Maps'] },
+      },
       actions: {},
       branches: [
         {

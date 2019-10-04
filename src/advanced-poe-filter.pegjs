@@ -139,10 +139,10 @@ conditionAnyEnchantment = attr:'AnyEnchantment' __ val:conditionValueBoolean    
 conditionHasEnchantment = attr:'HasEnchantment' __ val:conditionValueArray      { return { lineType: 'condition', attr, val} }
 
 // Condition Values
-conditionValueArray = names
-conditionValueNumber = operator:operator __ num:num { return `${operator} ${num}` }
+conditionValueArray = operator:(matchOperator __)? names:names { return operator ? { ope: operator[0], vals: names } : { ope: '=', vals: names } }
+conditionValueNumber = operator:numOperator __ num:num { return `${operator} ${num}` }
 conditionValueSocketRGBW = socketRGBW
-conditionValueRarity = operator:(operator __)? rarity:rarity { return operator ? `${operator[0]} ${rarity}` : rarity }
+conditionValueRarity = operator:(numOperator __)? rarity:rarity { return operator ? `${operator[0]} ${rarity}` : rarity }
 conditionValueBoolean = boolean
 
 //
@@ -219,7 +219,8 @@ actionValuePlayEffect = color:playEffectColor temp:(__ 'Temp')? { return temp ? 
 //
 names = name0:string names:(__ string)* { return [name0].concat(names.map((n) => n[1])) }
 color = r:rgbaNum __ g:rgbaNum __ b:rgbaNum alpha:(__ rgbaNum)? { return { rgb: { r, g, b }, alpha: alpha ? alpha[1] : 255 } }
-operator = '<=' / '>=' / '<' / '>' / '='
+numOperator = '<=' / '>=' / '<' / '>' / '='
+matchOperator = '==' / '='
 rarity = 'Normal' / 'Magic' / 'Rare' / 'Unique'
 socketRGBW = $('R'* $'G'* $'B'* $'W'*)
 rgbaNum = num:num &{ return 0 <= num && num <= 255 } { return num }
