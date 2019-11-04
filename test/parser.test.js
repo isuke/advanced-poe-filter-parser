@@ -168,7 +168,7 @@ Hide "Section5"
     SetBorderColor           Saturate(42%)
     SetTextColor             Desaturate(53%)
     SetBackgroundColor       Hex(123)
-Unset "Section6"
+Unset
     SetBorderColor           Saturation(64%)
     SetTextColor             Lightness(75%)
 
@@ -347,7 +347,7 @@ Unset "Section6"
     },
     {
       id: '0001',
-      name: 'Section6',
+      name: undefined,
       activity: 'Unset',
       conditions: {},
       actions: {
@@ -364,7 +364,7 @@ Unset "Section6"
         end: {
           line: 72,
           column: 1,
-          offset: 2373,
+          offset: 2362,
         },
       },
     },
@@ -645,6 +645,117 @@ Show "Map Section"
           line: 14,
           column: 1,
           offset: 261,
+        },
+      },
+    },
+  ]
+
+  const result = parse(script)
+
+  t.deepEqual(result, expected)
+})
+
+test('parse : single fork without name', (t) => {
+  const script = outdent`
+Show
+    Class "Maps"
+    MapTier > 3
+    SetBorderColor 250 251 252
+    PlayAlertSound 1 300
+
+    Fork
+        Show
+            Rarity Rare
+            SetBackgroundColor 255 0 0 100
+
+        Hide
+            Rarity Magic
+
+   `
+
+  const expected = [
+    {
+      id: '0003',
+      name: undefined,
+      activity: 'Show',
+      conditions: {
+        Class: { ope: '=', vals: ['Maps'] },
+        MapTier: '> 3',
+      },
+      actions: {
+        SetBorderColor: { rgb: { r: 250, g: 251, b: 252 }, alpha: 255 },
+        PlayAlertSound: { id: '1', volume: 300 },
+      },
+      branches: [
+        {
+          name: undefined,
+          type: 'Fork',
+          blocks: [
+            {
+              id: '0001',
+              name: undefined,
+              activity: 'Show',
+              conditions: { Rarity: 'Rare' },
+              actions: { SetBackgroundColor: { rgb: { r: 255, g: 0, b: 0 }, alpha: 100 } },
+              branches: [],
+              location: {
+                start: {
+                  line: 8,
+                  column: 9,
+                  offset: 112,
+                },
+                end: {
+                  line: 12,
+                  column: 1,
+                  offset: 185,
+                },
+              },
+            },
+            {
+              id: '0002',
+              name: undefined,
+              activity: 'Hide',
+              conditions: { Rarity: 'Magic' },
+              actions: {},
+              branches: [],
+              location: {
+                start: {
+                  line: 12,
+                  column: 9,
+                  offset: 193,
+                },
+                end: {
+                  line: 14,
+                  column: 1,
+                  offset: 223,
+                },
+              },
+            },
+          ],
+          location: {
+            start: {
+              line: 7,
+              column: 5,
+              offset: 99,
+            },
+            end: {
+              line: 14,
+              column: 1,
+              offset: 223,
+            },
+          },
+        },
+      ],
+      location: {
+        start: {
+          line: 1,
+          column: 1,
+          offset: 0,
+        },
+        end: {
+          line: 14,
+          column: 1,
+          offset: 223,
         },
       },
     },

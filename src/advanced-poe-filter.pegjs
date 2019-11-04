@@ -28,7 +28,7 @@ section = block:(block / emptyBlock) {
 
 block =
   blankline*
-  activity:('Show' / 'Hide' / 'Unset' / 'Ignore') __ name:string br
+  activity:('Show' / 'Hide' / 'Unset' / 'Ignore') name:(__ string)? br
   blankline*
   INDENT
     line0:line
@@ -50,28 +50,28 @@ block =
 
     let allBranches = branches.map(m => m[1])
 
-    return { id: getBlockId(), name, activity, conditions, actions, branches: allBranches, location: location() }
+    return { id: getBlockId(), name: name ? name[1] : undefined, activity, conditions, actions, branches: allBranches, location: location() }
   }
 
 emptyBlock =
   blankline*
-  activity:('Show' / 'Hide') __ name:string br
+  activity:('Show' / 'Hide') name:(__ string)? br
   blankline* {
-    return { id: getBlockId(), name, activity, conditions: {}, actions: {}, branches: [], location: location() }
+    return { id: getBlockId(), name: name ? name[1] : undefined, activity, conditions: {}, actions: {}, branches: [], location: location() }
   }
 
 line = line:(condition / action) br { return line }
 
 branch =
   blankline*
-  type:('Fork' / 'Mixin') __ name:string br
+  type:('Fork' / 'Mixin') name:(__ string)? br
   blankline*
   INDENT
     block0:block
     blocks:(SAMEDENT block)*
   OUTDENT {
     let allBlocks = [block0].concat(blocks.map(b => b[1]))
-    return { name, type, blocks: allBlocks, location: location() }
+    return { name: name ? name[1] : undefined, type, blocks: allBlocks, location: location() }
   }
 
 blankline = _* br / commentline
