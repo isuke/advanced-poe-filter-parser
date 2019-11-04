@@ -222,7 +222,7 @@ color = r:rgbaNum __ g:rgbaNum __ b:rgbaNum alpha:(__ rgbaNum)? { return { rgb: 
 numOperator = '<=' / '>=' / '<' / '>' / '='
 matchOperator = '==' / '='
 rarity = 'Normal' / 'Magic' / 'Rare' / 'Unique'
-socketRGBW = $('R'* $'G'* $'B'* $'W'*)
+socketRGBW = $('R'* 'G'* 'B'* 'W'*)
 rgbaNum = num:num &{ return 0 <= num && num <= 255 } { return num }
 fontSize = num:num &{ return 18 <= num && num <= 45 } { return num }
 minimapIconSize = val:('0' / '1' / '2' / 'Largest' / 'Medium' / 'Small') {
