@@ -90,3 +90,7 @@ const object = parse(script)
   //   },
   // ]
 ```
+
+== TODO
+
+* Change License
