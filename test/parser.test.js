@@ -128,6 +128,7 @@ Show "Section1"
     HasExplicitMod "Piyo"
     AnyEnchantment True
     HasEnchantment "Enchantment Decree of Force"
+    HasInfluence "Shaper" "Elder"
     SetBorderColor           100 101 102
     SetTextColor             103 104 105
     SetBackgroundColor       106 107 108
@@ -144,6 +145,7 @@ Show "Section2"
     SocketGroup    W
     Rarity         Rare
     HasExplicitMod "Piyo" "Piyo"
+    HasInfluence    == "Shaper" "Elder"
     SetBorderColor           100 101 102 200
     SetTextColor             103 104 105 201
     SetBackgroundColor       106 107 108 202
@@ -205,6 +207,7 @@ Unset "Section6"
         HasExplicitMod: { ope: '=', vals: ['Piyo'] },
         AnyEnchantment: true,
         HasEnchantment: { ope: '=', vals: ['Enchantment Decree of Force'] },
+        HasInfluence: { ope: '=', vals: ['Shaper', 'Elder'] },
       },
       actions: {
         SetBorderColor: { rgb: { r: 100, g: 101, b: 102 }, alpha: 255 },
@@ -225,9 +228,9 @@ Unset "Section6"
           offset: 0,
         },
         end: {
-          line: 38,
+          line: 39,
           column: 1,
-          offset: 1065,
+          offset: 1099,
         },
       },
     },
@@ -242,6 +245,7 @@ Unset "Section6"
         SocketGroup: 'W',
         Rarity: 'Rare',
         HasExplicitMod: { ope: '=', vals: ['Piyo', 'Piyo'] },
+        HasInfluence: { ope: '==', vals: ['Shaper', 'Elder'] },
       },
       actions: {
         SetBorderColor: { rgb: { r: 100, g: 101, b: 102 }, alpha: 200 },
@@ -254,14 +258,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 38,
+          line: 39,
           column: 1,
-          offset: 1065,
+          offset: 1099,
         },
         end: {
-          line: 51,
+          line: 53,
           column: 1,
-          offset: 1614,
+          offset: 1688,
         },
       },
     },
@@ -280,14 +284,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 51,
+          line: 53,
           column: 1,
-          offset: 1614,
+          offset: 1688,
         },
         end: {
-          line: 57,
+          line: 59,
           column: 1,
-          offset: 1831,
+          offset: 1905,
         },
       },
     },
@@ -306,14 +310,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 57,
+          line: 59,
           column: 1,
-          offset: 1831,
+          offset: 1905,
         },
         end: {
-          line: 63,
+          line: 65,
           column: 1,
-          offset: 2049,
+          offset: 2123,
         },
       },
     },
@@ -330,14 +334,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 63,
+          line: 65,
           column: 1,
-          offset: 2049,
+          offset: 2123,
         },
         end: {
-          line: 67,
+          line: 69,
           column: 1,
-          offset: 2191,
+          offset: 2265,
         },
       },
     },
@@ -353,14 +357,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 67,
+          line: 69,
           column: 1,
-          offset: 2191,
+          offset: 2265,
         },
         end: {
-          line: 70,
+          line: 72,
           column: 1,
-          offset: 2297,
+          offset: 2371,
         },
       },
     },
