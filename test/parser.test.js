@@ -158,7 +158,7 @@ Show "Section3"
     SetBackgroundColor       Lighten(10%)
     SetFontSize              Plus(5)
     PlayAlertSoundPositional ShAlchemy 200
-Show "Section4"
+Ignore "Section4"
     SetBorderColor           Darken(20%)
     SetTextColor             Whiten(31%)
     SetBackgroundColor       Blacken(100%)
@@ -298,7 +298,7 @@ Unset "Section6"
     {
       id: '0001',
       name: 'Section4',
-      activity: 'Show',
+      activity: 'Ignore',
       conditions: {},
       actions: {
         SetBorderColor: { function: 'Darken', val: 0.2 },
@@ -317,7 +317,7 @@ Unset "Section6"
         end: {
           line: 65,
           column: 1,
-          offset: 2123,
+          offset: 2125,
         },
       },
     },
@@ -336,12 +336,12 @@ Unset "Section6"
         start: {
           line: 65,
           column: 1,
-          offset: 2123,
+          offset: 2125,
         },
         end: {
           line: 69,
           column: 1,
-          offset: 2265,
+          offset: 2267,
         },
       },
     },
@@ -359,12 +359,12 @@ Unset "Section6"
         start: {
           line: 69,
           column: 1,
-          offset: 2265,
+          offset: 2267,
         },
         end: {
           line: 72,
           column: 1,
-          offset: 2371,
+          offset: 2373,
         },
       },
     },

@@ -28,7 +28,7 @@ section = block:(block / emptyBlock) {
 
 block =
   blankline*
-  activity:('Show' / 'Hide' / 'Unset') __ name:string br
+  activity:('Show' / 'Hide' / 'Unset' / 'Ignore') __ name:string br
   blankline*
   INDENT
     line0:line
