@@ -22,18 +22,18 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "7.6.4",
-    "@babel/core": "7.6.4",
-    "@babel/preset-env": "7.6.3",
+    "@babel/cli": "7.7.7",
+    "@babel/core": "7.7.7",
+    "@babel/preset-env": "7.7.7",
     "ava": "2.4.0",
-    "eslint": "6.6.0",
-    "eslint-config-prettier": "6.4.0",
-    "eslint-plugin-prettier": "3.1.1",
-    "outdent": "^0.7.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.7.0",
+    "eslint-plugin-prettier": "3.1.2",
+    "outdent": "0.7.0",
     "pegjs": "0.11.0-master.30f3260",
-    "prettier": "1.18.2",
-    "sinon": "7.5.0",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.1"
+    "prettier": "1.19.1",
+    "sinon": "8.0.0",
+    "webpack": "4.41.4",
+    "webpack-cli": "3.3.10"
   }
 }
