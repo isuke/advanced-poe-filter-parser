@@ -9,7 +9,9 @@
 :toc: preamble
 :toclevels: 1
 
-= Advanced PoE Filter Parser image:https://travis-ci.org/isuke/advanced-poe-filter-parser.svg?branch=master["Build Status", link="https://travis-ci.org/isuke/advanced-poe-filter-parser"] image:https://img.shields.io/npm/v/advanced-poe-filter-parser.svg["npm",link="https://www.npmjs.com/package/advanced-poe-filter-parser"] image:https://img.shields.io/badge/git--consistent-friendly-brightgreen.svg["git-consistent friendly",link="https://github.com/isuke/git-consistent"]
+= Advanced PoE Filter Parser image:https://img.shields.io/github/license/mashape/apistatus.svg["MIT", link="https://raw.githubusercontent.com/isuke/vscode-advanced-poe-filter/master/LICENSE"] image:https://travis-ci.org/isuke/advanced-poe-filter-parser.svg?branch=master["Build Status", link="https://travis-ci.org/isuke/advanced-poe-filter-parser"] image:https://img.shields.io/npm/v/advanced-poe-filter-parser.svg["npm",link="https://www.npmjs.com/package/advanced-poe-filter-parser"] image:https://img.shields.io/badge/git--consistent-friendly-brightgreen.svg["git-consistent friendly",link="https://github.com/isuke/git-consistent"]
+
+Advanced PoE Filter is used by link:https://filter-of-kalandra.netlify.com/[Filter of Kalarandra].
 
 == Usage
 
