@@ -4892,10 +4892,10 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-pegjs@0.11.0-master.30f3260:
-  version "0.11.0-master.30f3260"
-  resolved "https://registry.yarnpkg.com/pegjs/-/pegjs-0.11.0-master.30f3260.tgz#1331570aad314536ec3aee000599b5dd64e293f9"
-  integrity sha512-3vhANK28gnq2UJXy0ShTpaBrarSb8z9ZDZLBN3vhY1VUr1ML/vY7FX4SN4T3awokE6FrMV+oYf5pOKWAqe/AMA==
+pegjs@0.11.0-master.b7b87ea:
+  version "0.11.0-master.b7b87ea"
+  resolved "https://registry.yarnpkg.com/pegjs/-/pegjs-0.11.0-master.b7b87ea.tgz#dc41190696bc33c8a09210a0bf91e683d4f1d6dc"
+  integrity sha512-fwjzNiYHRUEUe/86Aaslb/ocbbsAupOcsJz+dlPYtgp3feCDRQOLChHO924XGh7fzSJBTdFCQTzmSOQaWjCTew==
 
 picomatch@^2.0.4, picomatch@^2.0.5:
   version "2.0.7"
