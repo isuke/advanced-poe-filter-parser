@@ -239,9 +239,9 @@ minimapIconSize = val:('0' / '1' / '2' / 'Largest' / 'Medium' / 'Small') {
         return val
     }
   }
-minimapIconColor = 'Red' / 'Green' / 'Blue' / 'Brown' / 'White' / 'Yellow'
+minimapIconColor = 'Red' / 'Green' / 'Blue' / 'Brown' / 'White' / 'Yellow' / 'Cyan' / 'Grey' / 'Orange' / 'Pink' / 'Purple'
 minimapIconShape = 'Circle' / 'Diamond' / 'Hexagon' / 'Square' / 'Star' / 'Triangle' / 'Cross' / 'Moon' / 'Raindrop' / 'Kite' / 'Pentagon' / 'UpsideDownHouse'
-playEffectColor = 'Red' / 'Green' / 'Blue' / 'Brown' / 'White' / 'Yellow'
+playEffectColor = 'Red' / 'Green' / 'Blue' / 'Brown' / 'White' / 'Yellow' / 'Cyan' / 'Grey' / 'Orange' / 'Pink' / 'Purple'
 soundId =
    '10' / '11' / '12' / '13' / '14' / '15' / '16'
   / '1' / '2' / '3' / '4' / '5' / '6' / '7' / '8' / '9'
