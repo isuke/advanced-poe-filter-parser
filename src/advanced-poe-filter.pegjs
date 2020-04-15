@@ -157,6 +157,7 @@ action =
   / actionSetFontSize
   / actionPlayAlertSound
   / actionPlayAlertSoundPositional
+  / actionEnableDropSound
   / actionDisableDropSound
   / actionCustomAlertSound
   / actionMinimapIcon
@@ -169,6 +170,7 @@ actionSetBackgroundColor       = attr:'SetBackgroundColor'       __ val:actionVa
 actionSetFontSize              = attr:'SetFontSize'              __ val:actionValueFontSize    { return { lineType: 'action', attr, val } }
 actionPlayAlertSound           = attr:'PlayAlertSound'           __ val:actionValueSound       { return { lineType: 'action', attr, val } }
 actionPlayAlertSoundPositional = attr:'PlayAlertSoundPositional' __ val:actionValueSound       { return { lineType: 'action', attr, val } }
+actionEnableDropSound          = attr:'EnableDropSound'          __ val:actionValueBoolean     { return { lineType: 'action', attr, val } }
 actionDisableDropSound         = attr:'DisableDropSound'         __ val:actionValueBoolean     { return { lineType: 'action', attr, val } }
 actionCustomAlertSound         = attr:'CustomAlertSound'         __ val:actionValueFilePath    { return { lineType: 'action', attr, val } }
 actionMinimapIcon              = attr:'MinimapIcon'              __ val:actionValueMinimapIcon { return { lineType: 'action', attr, val } }
