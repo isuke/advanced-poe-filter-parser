@@ -139,12 +139,13 @@ conditionWidth          = attr:'Width'          __ val:conditionValueNumber     
 conditionHasExplicitMod = attr:'HasExplicitMod' __ val:conditionValueArray      { return { lineType: 'condition', attr, val} }
 conditionAnyEnchantment = attr:'AnyEnchantment' __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
 conditionHasEnchantment = attr:'HasEnchantment' __ val:conditionValueArray      { return { lineType: 'condition', attr, val} }
-conditionHasInfluence   = attr:'HasInfluence'   __ val:conditionValueArray      { return { lineType: 'condition', attr, val} }
+conditionHasInfluence   = attr:'HasInfluence'   __ val:conditionValueArrayOrNone { return { lineType: 'condition', attr, val} }
 conditionEnchantmentPassiveNode = attr:'EnchantmentPassiveNode' __ val:conditionValueArray { return { lineType: 'condition', attr, val} }
 
 
 // Condition Values
 conditionValueArray = operator:(matchOperator __)? names:names { return operator ? { ope: operator[0], vals: names } : { ope: '=', vals: names } }
+conditionValueArrayOrNone = conditionValueArray / val:'None' { return val ?  { ope: undefined, val: 'None' } : { ope, vals } }
 conditionValueNumber = operator:numOperator __ num:num { return `${operator} ${num}` }
 conditionValueSocketRGBW = socketRGBW
 conditionValueRarity = operator:(numOperator __)? rarity:rarity { return operator ? `${operator[0]} ${rarity}` : rarity }

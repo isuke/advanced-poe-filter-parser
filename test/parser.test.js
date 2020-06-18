@@ -154,6 +154,7 @@ Show "Section2"
     MinimapIcon              Medium Red Circle
     PlayEffect               Blue Temp
 Show "Section3"
+    HasInfluence None
     SetBorderColor           Negate()
     SetTextColor             Grayscale()
     SetBackgroundColor       Lighten(10%)
@@ -275,7 +276,9 @@ Unset "Section6"
       id: '0001',
       name: 'Section3',
       activity: 'Show',
-      conditions: {},
+      conditions: {
+        HasInfluence: { ope: undefined, val: 'None' },
+      },
       actions: {
         SetBorderColor: { function: 'Negate', val: undefined },
         SetTextColor: { function: 'Grayscale', val: undefined },
@@ -291,9 +294,9 @@ Unset "Section6"
           offset: 1768,
         },
         end: {
-          line: 60,
+          line: 61,
           column: 1,
-          offset: 1985,
+          offset: 2007,
         },
       },
     },
@@ -312,14 +315,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 60,
+          line: 61,
           column: 1,
-          offset: 1985,
+          offset: 2007,
         },
         end: {
-          line: 66,
+          line: 67,
           column: 1,
-          offset: 2205,
+          offset: 2227,
         },
       },
     },
@@ -336,14 +339,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 66,
+          line: 67,
           column: 1,
-          offset: 2205,
+          offset: 2227,
         },
         end: {
-          line: 70,
+          line: 71,
           column: 1,
-          offset: 2347,
+          offset: 2369,
         },
       },
     },
@@ -359,14 +362,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 70,
+          line: 71,
           column: 1,
-          offset: 2347,
+          offset: 2369,
         },
         end: {
-          line: 73,
+          line: 74,
           column: 1,
-          offset: 2453,
+          offset: 2475,
         },
       },
     },
