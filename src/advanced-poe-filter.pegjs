@@ -109,6 +109,7 @@ condition =
   / conditionAnyEnchantment
   / conditionHasEnchantment
   / conditionHasInfluence
+  / conditionEnchantmentPassiveNode
 
 // Condition Attributes
 conditionClass          = attr:'Class'          __ val:conditionValueArray      { return { lineType: 'condition', attr, val} }
@@ -139,6 +140,8 @@ conditionHasExplicitMod = attr:'HasExplicitMod' __ val:conditionValueArray      
 conditionAnyEnchantment = attr:'AnyEnchantment' __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
 conditionHasEnchantment = attr:'HasEnchantment' __ val:conditionValueArray      { return { lineType: 'condition', attr, val} }
 conditionHasInfluence   = attr:'HasInfluence'   __ val:conditionValueArray      { return { lineType: 'condition', attr, val} }
+conditionEnchantmentPassiveNode = attr:'EnchantmentPassiveNode' __ val:conditionValueArray { return { lineType: 'condition', attr, val} }
+
 
 // Condition Values
 conditionValueArray = operator:(matchOperator __)? names:names { return operator ? { ope: operator[0], vals: names } : { ope: '=', vals: names } }

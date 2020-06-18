@@ -129,6 +129,7 @@ Show "Section1"
     AnyEnchantment True
     HasEnchantment "Enchantment Decree of Force"
     HasInfluence "Shaper" "Elder"
+    EnchantmentPassiveNode "Damage while you have a Herald" "Projectile Damage"
     SetBorderColor           100 101 102
     SetTextColor             103 104 105
     SetBackgroundColor       106 107 108
@@ -208,6 +209,7 @@ Unset "Section6"
         AnyEnchantment: true,
         HasEnchantment: { ope: '=', vals: ['Enchantment Decree of Force'] },
         HasInfluence: { ope: '=', vals: ['Shaper', 'Elder'] },
+        EnchantmentPassiveNode: { ope: '=', vals: ['Damage while you have a Herald', 'Projectile Damage'] },
       },
       actions: {
         SetBorderColor: { rgb: { r: 100, g: 101, b: 102 }, alpha: 255 },
@@ -228,9 +230,9 @@ Unset "Section6"
           offset: 0,
         },
         end: {
-          line: 39,
+          line: 40,
           column: 1,
-          offset: 1099,
+          offset: 1179,
         },
       },
     },
@@ -258,14 +260,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 39,
+          line: 40,
           column: 1,
-          offset: 1099,
+          offset: 1179,
         },
         end: {
-          line: 53,
+          line: 54,
           column: 1,
-          offset: 1688,
+          offset: 1768,
         },
       },
     },
@@ -284,14 +286,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 53,
+          line: 54,
           column: 1,
-          offset: 1688,
+          offset: 1768,
         },
         end: {
-          line: 59,
+          line: 60,
           column: 1,
-          offset: 1905,
+          offset: 1985,
         },
       },
     },
@@ -310,14 +312,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 59,
+          line: 60,
           column: 1,
-          offset: 1905,
+          offset: 1985,
         },
         end: {
-          line: 65,
+          line: 66,
           column: 1,
-          offset: 2125,
+          offset: 2205,
         },
       },
     },
@@ -334,14 +336,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 65,
+          line: 66,
           column: 1,
-          offset: 2125,
+          offset: 2205,
         },
         end: {
-          line: 69,
+          line: 70,
           column: 1,
-          offset: 2267,
+          offset: 2347,
         },
       },
     },
@@ -357,14 +359,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 69,
+          line: 70,
           column: 1,
-          offset: 2267,
+          offset: 2347,
         },
         end: {
-          line: 72,
+          line: 73,
           column: 1,
-          offset: 2373,
+          offset: 2453,
         },
       },
     },
