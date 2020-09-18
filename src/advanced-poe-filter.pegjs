@@ -87,6 +87,7 @@ condition =
   / conditionDropLevel
   / conditionItemLevel
   / conditionGemLevel
+  / conditionGemQualityType
   / conditionStackSize
   / conditionMapTier
   / conditionQuality
@@ -110,6 +111,8 @@ condition =
   / conditionHasEnchantment
   / conditionHasInfluence
   / conditionEnchantmentPassiveNode
+  / conditionAlternateQuality
+  / conditionReplica
 
 // Condition Attributes
 conditionClass          = attr:'Class'          __ val:conditionValueArray      { return { lineType: 'condition', attr, val} }
@@ -118,6 +121,7 @@ conditionProphecy       = attr:'Prophecy'       __ val:conditionValueArray      
 conditionDropLevel      = attr:'DropLevel'      __ val:conditionValueNumber     { return { lineType: 'condition', attr, val} }
 conditionItemLevel      = attr:'ItemLevel'      __ val:conditionValueNumber     { return { lineType: 'condition', attr, val} }
 conditionGemLevel       = attr:'GemLevel'       __ val:conditionValueNumber     { return { lineType: 'condition', attr, val} }
+conditionGemQualityType = attr:'GemQualityType' __ val:conditionValueArray      { return { lineType: 'condition', attr, val} }
 conditionStackSize      = attr:'StackSize'      __ val:conditionValueNumber     { return { lineType: 'condition', attr, val} }
 conditionMapTier        = attr:'MapTier'        __ val:conditionValueNumber     { return { lineType: 'condition', attr, val} }
 conditionQuality        = attr:'Quality'        __ val:conditionValueNumber     { return { lineType: 'condition', attr, val} }
@@ -141,7 +145,8 @@ conditionAnyEnchantment = attr:'AnyEnchantment' __ val:conditionValueBoolean    
 conditionHasEnchantment = attr:'HasEnchantment' __ val:conditionValueArray      { return { lineType: 'condition', attr, val} }
 conditionHasInfluence   = attr:'HasInfluence'   __ val:conditionValueArrayOrNone { return { lineType: 'condition', attr, val} }
 conditionEnchantmentPassiveNode = attr:'EnchantmentPassiveNode' __ val:conditionValueArray { return { lineType: 'condition', attr, val} }
-
+conditionAlternateQuality = attr:'AlternateQuality' __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
+conditionReplica        = attr:'Replica'        __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
 
 // Condition Values
 conditionValueArray = operator:(matchOperator __)? names:names { return operator ? { ope: operator[0], vals: names } : { ope: '=', vals: names } }

@@ -107,6 +107,7 @@ Show "Section1"
     DropLevel      > 85
     ItemLevel      >= 70
     GemLevel       = 10
+    GemQualityType "Superior"
     StackSize      < 11
     MapTier        <= 12
     Quality        = 15
@@ -130,6 +131,8 @@ Show "Section1"
     HasEnchantment "Enchantment Decree of Force"
     HasInfluence "Shaper" "Elder"
     EnchantmentPassiveNode "Damage while you have a Herald" "Projectile Damage"
+    AlternateQuality True
+    Replica True
     SetBorderColor           100 101 102
     SetTextColor             103 104 105
     SetBackgroundColor       106 107 108
@@ -188,6 +191,7 @@ Unset "Section6"
         DropLevel: '> 85',
         ItemLevel: '>= 70',
         GemLevel: '= 10',
+        GemQualityType: { ope: '=', vals: ['Superior'] },
         StackSize: '< 11',
         MapTier: '<= 12',
         Quality: '= 15',
@@ -211,6 +215,8 @@ Unset "Section6"
         HasEnchantment: { ope: '=', vals: ['Enchantment Decree of Force'] },
         HasInfluence: { ope: '=', vals: ['Shaper', 'Elder'] },
         EnchantmentPassiveNode: { ope: '=', vals: ['Damage while you have a Herald', 'Projectile Damage'] },
+        AlternateQuality: true,
+        Replica: true,
       },
       actions: {
         SetBorderColor: { rgb: { r: 100, g: 101, b: 102 }, alpha: 255 },
@@ -231,9 +237,9 @@ Unset "Section6"
           offset: 0,
         },
         end: {
-          line: 40,
+          line: 43,
           column: 1,
-          offset: 1179,
+          offset: 1252,
         },
       },
     },
@@ -261,14 +267,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 40,
+          line: 43,
           column: 1,
-          offset: 1179,
+          offset: 1252,
         },
         end: {
-          line: 54,
+          line: 57,
           column: 1,
-          offset: 1768,
+          offset: 1841,
         },
       },
     },
@@ -289,14 +295,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 54,
+          line: 57,
           column: 1,
-          offset: 1768,
+          offset: 1841,
         },
         end: {
-          line: 61,
+          line: 64,
           column: 1,
-          offset: 2007,
+          offset: 2080,
         },
       },
     },
@@ -315,14 +321,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 61,
+          line: 64,
           column: 1,
-          offset: 2007,
+          offset: 2080,
         },
         end: {
-          line: 67,
+          line: 70,
           column: 1,
-          offset: 2227,
+          offset: 2300,
         },
       },
     },
@@ -339,14 +345,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 67,
+          line: 70,
           column: 1,
-          offset: 2227,
+          offset: 2300,
         },
         end: {
-          line: 71,
+          line: 74,
           column: 1,
-          offset: 2369,
+          offset: 2442,
         },
       },
     },
@@ -362,14 +368,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 71,
-          column: 1,
-          offset: 2369,
-        },
-        end: {
           line: 74,
           column: 1,
-          offset: 2475,
+          offset: 2442,
+        },
+        end: {
+          line: 77,
+          column: 1,
+          offset: 2548,
         },
       },
     },
