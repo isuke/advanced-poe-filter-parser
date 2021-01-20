@@ -142,7 +142,7 @@ Show "Section1"
     SetBackgroundColor       106 107 108
     SetFontSize              30
     PlayAlertSound           16 300
-    DisableDropSound         False
+    EnableDropSound
     CustomAlertSound         "C\\foobar\\sound.mp3" 300
     MinimapIcon              0 Red Circle
     PlayEffect               Red
@@ -158,6 +158,7 @@ Show "Section2"
     SetTextColor             103 104 105 201
     SetBackgroundColor       106 107 108 202
     PlayAlertSound           2
+    DisableDropSound
     CustomAlertSound         "C\\foobar\\sound.mp3"
     MinimapIcon              Medium Red Circle
     PlayEffect               Blue Temp
@@ -233,7 +234,7 @@ Unset "Section6"
         SetBackgroundColor: { rgb: { r: 106, g: 107, b: 108 }, alpha: 255 },
         SetFontSize: 30,
         PlayAlertSound: { id: '16', volume: 300 },
-        DisableDropSound: false,
+        EnableDropSound: true,
         CustomAlertSound: { filePath: 'C\\foobar\\sound.mp3', volume: 300 },
         MinimapIcon: { size: 'Largest', color: 'Red', shape: 'Circle' },
         PlayEffect: { color: 'Red', temp: false },
@@ -248,7 +249,7 @@ Unset "Section6"
         end: {
           line: 47,
           column: 1,
-          offset: 1358,
+          offset: 1343,
         },
       },
     },
@@ -270,6 +271,7 @@ Unset "Section6"
         SetTextColor: { rgb: { r: 103, g: 104, b: 105 }, alpha: 201 },
         SetBackgroundColor: { rgb: { r: 106, g: 107, b: 108 }, alpha: 202 },
         PlayAlertSound: { id: '2', volume: undefined },
+        DisableDropSound: true,
         CustomAlertSound: { filePath: 'C\\foobar\\sound.mp3', volume: undefined },
         MinimapIcon: { size: 'Medium', color: 'Red', shape: 'Circle' },
         PlayEffect: { color: 'Blue', temp: true },
@@ -279,12 +281,12 @@ Unset "Section6"
         start: {
           line: 47,
           column: 1,
-          offset: 1358,
+          offset: 1343,
         },
         end: {
-          line: 62,
+          line: 63,
           column: 1,
-          offset: 1997,
+          offset: 2003,
         },
       },
     },
@@ -305,14 +307,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 62,
+          line: 63,
           column: 1,
-          offset: 1997,
+          offset: 2003,
         },
         end: {
-          line: 69,
+          line: 70,
           column: 1,
-          offset: 2236,
+          offset: 2242,
         },
       },
     },
@@ -331,14 +333,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 69,
+          line: 70,
           column: 1,
-          offset: 2236,
+          offset: 2242,
         },
         end: {
-          line: 75,
+          line: 76,
           column: 1,
-          offset: 2456,
+          offset: 2462,
         },
       },
     },
@@ -355,14 +357,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 75,
+          line: 76,
           column: 1,
-          offset: 2456,
+          offset: 2462,
         },
         end: {
-          line: 79,
+          line: 80,
           column: 1,
-          offset: 2598,
+          offset: 2604,
         },
       },
     },
@@ -378,14 +380,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 79,
+          line: 80,
           column: 1,
-          offset: 2598,
+          offset: 2604,
         },
         end: {
-          line: 82,
+          line: 83,
           column: 1,
-          offset: 2704,
+          offset: 2710,
         },
       },
     },
