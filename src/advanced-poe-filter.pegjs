@@ -86,6 +86,7 @@ condition =
   / conditionProphecy
   / conditionDropLevel
   / conditionItemLevel
+  / conditionAreaLevel
   / conditionGemLevel
   / conditionGemQualityType
   / conditionStackSize
@@ -100,12 +101,15 @@ condition =
   / conditionFracturedItem
   / conditionSynthesisedItem
   / conditionCorrupted
+  / conditionMirrored
   / conditionIdentified
   / conditionShapedMap
   / conditionElderMap
   / conditionBlightedMap
   / conditionHeight
   / conditionWidth
+  / conditionCorruptedMods
+  / conditionEnchantmentPassiveNum
   / conditionHasExplicitMod
   / conditionAnyEnchantment
   / conditionHasEnchantment
@@ -120,6 +124,7 @@ conditionBaseType       = attr:'BaseType'       __ val:conditionValueArray      
 conditionProphecy       = attr:'Prophecy'       __ val:conditionValueArray      { return { lineType: 'condition', attr, val} }
 conditionDropLevel      = attr:'DropLevel'      __ val:conditionValueNumber     { return { lineType: 'condition', attr, val} }
 conditionItemLevel      = attr:'ItemLevel'      __ val:conditionValueNumber     { return { lineType: 'condition', attr, val} }
+conditionAreaLevel      = attr:'AreaLevel'      __ val:conditionValueNumber     { return { lineType: 'condition', attr, val} }
 conditionGemLevel       = attr:'GemLevel'       __ val:conditionValueNumber     { return { lineType: 'condition', attr, val} }
 conditionGemQualityType = attr:'GemQualityType' __ val:conditionValueArray      { return { lineType: 'condition', attr, val} }
 conditionStackSize      = attr:'StackSize'      __ val:conditionValueNumber     { return { lineType: 'condition', attr, val} }
@@ -134,12 +139,15 @@ conditionElderItem      = attr:'ElderItem'      __ val:conditionValueBoolean    
 conditionFracturedItem  = attr:'FracturedItem'  __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
 conditionSynthesisedItem = attr:'SynthesisedItem' __ val:conditionValueBoolean  { return { lineType: 'condition', attr, val} }
 conditionCorrupted      = attr:'Corrupted'      __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
+conditionMirrored       = attr:'Mirrored'       __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
 conditionIdentified     = attr:'Identified'     __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
 conditionShapedMap      = attr:'ShapedMap'      __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
 conditionElderMap       = attr:'ElderMap'       __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
 conditionBlightedMap    = attr:'BlightedMap'    __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
 conditionHeight         = attr:'Height'         __ val:conditionValueNumber     { return { lineType: 'condition', attr, val} }
 conditionWidth          = attr:'Width'          __ val:conditionValueNumber     { return { lineType: 'condition', attr, val} }
+conditionCorruptedMods  = attr:'CorruptedMods'  __ val:conditionValueNumber     { return { lineType: 'condition', attr, val} }
+conditionEnchantmentPassiveNum = attr:'EnchantmentPassiveNum' __ val:conditionValueNumber { return { lineType: 'condition', attr, val} }
 conditionHasExplicitMod = attr:'HasExplicitMod' __ val:conditionValueArray      { return { lineType: 'condition', attr, val} }
 conditionAnyEnchantment = attr:'AnyEnchantment' __ val:conditionValueBoolean    { return { lineType: 'condition', attr, val} }
 conditionHasEnchantment = attr:'HasEnchantment' __ val:conditionValueArray      { return { lineType: 'condition', attr, val} }

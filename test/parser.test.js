@@ -106,6 +106,7 @@ Show "Section1"
     Prophecy       == "Foo"
     DropLevel      > 85
     ItemLevel      >= 70
+    AreaLevel      < 30
     GemLevel       = 10
     GemQualityType "Superior"
     StackSize      < 11
@@ -120,12 +121,15 @@ Show "Section1"
     FracturedItem  False
     SynthesisedItem False
     Corrupted      True
+    Mirrored       True
     Identified     True
     ShapedMap      True
     ElderMap       True
     BlightedMap    True
     Height         > 1
     Width          > 2
+    CorruptedMods  >= 1
+    EnchantmentPassiveNum > 5
     HasExplicitMod "Piyo"
     AnyEnchantment True
     HasEnchantment "Enchantment Decree of Force"
@@ -190,6 +194,7 @@ Unset "Section6"
         Prophecy: { ope: '==', vals: ['Foo'] },
         DropLevel: '> 85',
         ItemLevel: '>= 70',
+        AreaLevel: '< 30',
         GemLevel: '= 10',
         GemQualityType: { ope: '=', vals: ['Superior'] },
         StackSize: '< 11',
@@ -204,12 +209,15 @@ Unset "Section6"
         FracturedItem: false,
         SynthesisedItem: false,
         Corrupted: true,
+        Mirrored: true,
         Identified: true,
         ShapedMap: true,
         ElderMap: true,
         BlightedMap: true,
         Height: '> 1',
         Width: '> 2',
+        CorruptedMods: '>= 1',
+        EnchantmentPassiveNum: '> 5',
         HasExplicitMod: { ope: '=', vals: ['Piyo'] },
         AnyEnchantment: true,
         HasEnchantment: { ope: '=', vals: ['Enchantment Decree of Force'] },
@@ -237,9 +245,9 @@ Unset "Section6"
           offset: 0,
         },
         end: {
-          line: 43,
+          line: 47,
           column: 1,
-          offset: 1252,
+          offset: 1354,
         },
       },
     },
@@ -267,14 +275,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 43,
+          line: 47,
           column: 1,
-          offset: 1252,
+          offset: 1354,
         },
         end: {
-          line: 57,
+          line: 61,
           column: 1,
-          offset: 1841,
+          offset: 1943,
         },
       },
     },
@@ -295,14 +303,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 57,
+          line: 61,
           column: 1,
-          offset: 1841,
+          offset: 1943,
         },
         end: {
-          line: 64,
+          line: 68,
           column: 1,
-          offset: 2080,
+          offset: 2182,
         },
       },
     },
@@ -321,14 +329,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 64,
+          line: 68,
           column: 1,
-          offset: 2080,
+          offset: 2182,
         },
         end: {
-          line: 70,
+          line: 74,
           column: 1,
-          offset: 2300,
+          offset: 2402,
         },
       },
     },
@@ -345,14 +353,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 70,
-          column: 1,
-          offset: 2300,
-        },
-        end: {
           line: 74,
           column: 1,
-          offset: 2442,
+          offset: 2402,
+        },
+        end: {
+          line: 78,
+          column: 1,
+          offset: 2544,
         },
       },
     },
@@ -368,14 +376,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 74,
+          line: 78,
           column: 1,
-          offset: 2442,
+          offset: 2544,
         },
         end: {
-          line: 77,
+          line: 81,
           column: 1,
-          offset: 2548,
+          offset: 2650,
         },
       },
     },
