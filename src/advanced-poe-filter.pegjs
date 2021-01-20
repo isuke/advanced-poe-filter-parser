@@ -187,7 +187,7 @@ actionSetFontSize              = attr:'SetFontSize'              __ val:actionVa
 actionPlayAlertSound           = attr:'PlayAlertSound'           __ val:actionValueSound       { return { lineType: 'action', attr, val } }
 actionPlayAlertSoundPositional = attr:'PlayAlertSoundPositional' __ val:actionValueSound       { return { lineType: 'action', attr, val } }
 actionDisableDropSound         = attr:'DisableDropSound'         __ val:actionValueBoolean     { return { lineType: 'action', attr, val } }
-actionCustomAlertSound         = attr:'CustomAlertSound'         __ val:actionValueFilePath    { return { lineType: 'action', attr, val } }
+actionCustomAlertSound         = attr:'CustomAlertSound'         __ val:actionValueCustomSound { return { lineType: 'action', attr, val } }
 actionMinimapIcon              = attr:'MinimapIcon'              __ val:actionValueMinimapIcon { return { lineType: 'action', attr, val } }
 actionPlayEffect               = attr:'PlayEffect'               __ val:actionValuePlayEffect  { return { lineType: 'action', attr, val } }
 
@@ -228,8 +228,8 @@ actionFunctionMinus = name:'Minus' '(' num:num ')' &{ return 0 <= num && num <= 
 actionValueColor = color / actionFunctionColor
 actionValueFontSize = fontSize / actionFunctionFontSize
 actionValueSound = id:soundId volume:(__ soundVolume)? { return { id, volume: volume ? parseInt(volume[1], 10) : undefined } }
+actionValueCustomSound = filePath:string volume:(__ soundVolume)? { return { filePath, volume: volume ? parseInt(volume[1], 10) : undefined } }
 actionValueBoolean = boolean
-actionValueFilePath = string
 actionValueMinimapIcon = size:minimapIconSize __ color:minimapIconColor __ shape:minimapIconShape { return { size, color, shape } }
 actionValuePlayEffect = color:playEffectColor temp:(__ 'Temp')? { return temp ? { color, temp: true } : { color, temp: false } }
 
