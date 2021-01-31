@@ -130,9 +130,9 @@ Show "Section1"
     Width          > 2
     CorruptedMods  >= 1
     EnchantmentPassiveNum > 5
-    HasExplicitMod "Piyo"
+    HasExplicitMod "Foo" "Bar"
     AnyEnchantment True
-    HasEnchantment "Enchantment Decree of Force"
+    HasEnchantment "Foo" "Bar"
     HasInfluence "Shaper" "Elder"
     EnchantmentPassiveNode "Damage while you have a Herald" "Projectile Damage"
     AlternateQuality True
@@ -152,8 +152,9 @@ Show "Section2"
     Prophecy       "Foo" "Bar"
     SocketGroup    W
     Rarity         Rare
-    HasExplicitMod "Piyo" "Piyo"
-    HasInfluence    == "Shaper" "Elder"
+    HasExplicitMod == "Foo" "Bar"
+    HasEnchantment == "Foo" "Bar"
+    HasInfluence   == "Shaper" "Elder"
     SetBorderColor           100 101 102 200
     SetTextColor             103 104 105 201
     SetBackgroundColor       106 107 108 202
@@ -163,6 +164,8 @@ Show "Section2"
     MinimapIcon              Medium Red Circle
     PlayEffect               Blue Temp
 Show "Section3"
+    HasExplicitMod >= 2 "Foo" "Bar"
+    HasEnchantment >= 2 "Foo" "Bar"
     HasInfluence None
     SetBorderColor           Negate()
     SetTextColor             Grayscale()
@@ -220,9 +223,9 @@ Unset "Section6"
         Width: '> 2',
         CorruptedMods: '>= 1',
         EnchantmentPassiveNum: '> 5',
-        HasExplicitMod: { ope: '=', vals: ['Piyo'] },
+        HasExplicitMod: { ope: '=', vals: ['Foo', 'Bar'] },
         AnyEnchantment: true,
-        HasEnchantment: { ope: '=', vals: ['Enchantment Decree of Force'] },
+        HasEnchantment: { ope: '=', vals: ['Foo', 'Bar'] },
         HasInfluence: { ope: '=', vals: ['Shaper', 'Elder'] },
         EnchantmentPassiveNode: { ope: '=', vals: ['Damage while you have a Herald', 'Projectile Damage'] },
         AlternateQuality: true,
@@ -249,7 +252,7 @@ Unset "Section6"
         end: {
           line: 47,
           column: 1,
-          offset: 1343,
+          offset: 1330,
         },
       },
     },
@@ -263,7 +266,8 @@ Unset "Section6"
         Prophecy: { ope: '=', vals: ['Foo', 'Bar'] },
         SocketGroup: 'W',
         Rarity: 'Rare',
-        HasExplicitMod: { ope: '=', vals: ['Piyo', 'Piyo'] },
+        HasExplicitMod: { ope: '==', vals: ['Foo', 'Bar'] },
+        HasEnchantment: { ope: '==', vals: ['Foo', 'Bar'] },
         HasInfluence: { ope: '==', vals: ['Shaper', 'Elder'] },
       },
       actions: {
@@ -281,12 +285,12 @@ Unset "Section6"
         start: {
           line: 47,
           column: 1,
-          offset: 1343,
+          offset: 1330,
         },
         end: {
-          line: 63,
+          line: 64,
           column: 1,
-          offset: 2003,
+          offset: 2024,
         },
       },
     },
@@ -295,6 +299,8 @@ Unset "Section6"
       name: 'Section3',
       activity: 'Show',
       conditions: {
+        HasExplicitMod: { numeric: { ope: '>=', val: 2 }, vals: ['Foo', 'Bar'] },
+        HasEnchantment: { numeric: { ope: '>=', val: 2 }, vals: ['Foo', 'Bar'] },
         HasInfluence: { ope: undefined, val: 'None' },
       },
       actions: {
@@ -307,14 +313,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 63,
+          line: 64,
           column: 1,
-          offset: 2003,
+          offset: 2024,
         },
         end: {
-          line: 70,
+          line: 73,
           column: 1,
-          offset: 2242,
+          offset: 2335,
         },
       },
     },
@@ -333,14 +339,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 70,
+          line: 73,
           column: 1,
-          offset: 2242,
+          offset: 2335,
         },
         end: {
-          line: 76,
+          line: 79,
           column: 1,
-          offset: 2462,
+          offset: 2555,
         },
       },
     },
@@ -357,14 +363,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 76,
+          line: 79,
           column: 1,
-          offset: 2462,
+          offset: 2555,
         },
         end: {
-          line: 80,
+          line: 83,
           column: 1,
-          offset: 2604,
+          offset: 2697,
         },
       },
     },
@@ -380,14 +386,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 80,
-          column: 1,
-          offset: 2604,
-        },
-        end: {
           line: 83,
           column: 1,
-          offset: 2710,
+          offset: 2697,
+        },
+        end: {
+          line: 86,
+          column: 1,
+          offset: 2803,
         },
       },
     },
