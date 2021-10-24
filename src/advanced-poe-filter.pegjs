@@ -108,9 +108,11 @@ condition =
   / conditionCorrupted
   / conditionMirrored
   / conditionIdentified
+  / conditionScourged
   / conditionShapedMap
   / conditionElderMap
   / conditionBlightedMap
+  / conditionUberBlightedMap
   / conditionHeight
   / conditionWidth
   / conditionCorruptedMods
@@ -151,9 +153,11 @@ conditionSynthesisedItem        = attr:'SynthesisedItem'        __ val:condition
 conditionCorrupted              = attr:'Corrupted'              __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionMirrored               = attr:'Mirrored'               __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionIdentified             = attr:'Identified'             __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
+conditionScourged               = attr:'Scourged'               __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionShapedMap              = attr:'ShapedMap'              __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionElderMap               = attr:'ElderMap'               __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionBlightedMap            = attr:'BlightedMap'            __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
+conditionUberBlightedMap        = attr:'UberBlightedMap'        __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionHeight                 = attr:'Height'                 __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionWidth                  = attr:'Width'                  __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionCorruptedMods          = attr:'CorruptedMods'          __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
