@@ -96,6 +96,11 @@ condition =
   / conditionSockets
   / conditionSocketGroup
   / conditionRarity
+  / conditionBaseDefencePercentile
+  / conditionBaseArmour
+  / conditionBaseEnergyShield
+  / conditionBaseEvasion
+  / conditionBaseWard
   / conditionShaperItem
   / conditionElderItem
   / conditionFracturedItem
@@ -134,6 +139,11 @@ conditionLinkedSockets          = attr:'LinkedSockets'          __ val:condition
 conditionSockets                = attr:'Sockets'                __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionSocketGroup            = attr:'SocketGroup'            __ val:conditionValueSocketRGBW      { return { lineType: 'condition', attr, val} }
 conditionRarity                 = attr:'Rarity'                 __ val:conditionValueRarity          { return { lineType: 'condition', attr, val} }
+conditionBaseDefencePercentile  = attr:'BaseDefencePercentile'  __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
+conditionBaseArmour             = attr:'BaseArmour'             __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
+conditionBaseEnergyShield       = attr:'BaseEnergyShield'       __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
+conditionBaseEvasion            = attr:'BaseEvasion'            __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
+conditionBaseWard               = attr:'BaseWard'               __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionShaperItem             = attr:'ShaperItem'             __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionElderItem              = attr:'ElderItem'              __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionFracturedItem          = attr:'FracturedItem'          __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }

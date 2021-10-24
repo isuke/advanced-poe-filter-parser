@@ -116,6 +116,11 @@ Show "Section1"
     Sockets        = 5
     SocketGroup    RGB
     Rarity         = Rare
+    BaseDefencePercentile > 50
+    BaseArmour       > 40
+    BaseEnergyShield > 41
+    BaseEvasion      > 42
+    BaseWard         > 43
     ShaperItem     True
     ElderItem      False
     FracturedItem  False
@@ -209,6 +214,11 @@ Unset "Section6"
         Sockets: '= 5',
         SocketGroup: 'RGB',
         Rarity: '= Rare',
+        BaseDefencePercentile: '> 50',
+        BaseArmour: '> 40',
+        BaseEnergyShield: '> 41',
+        BaseEvasion: '> 42',
+        BaseWard: '> 43',
         ShaperItem: true,
         ElderItem: false,
         FracturedItem: false,
@@ -250,9 +260,9 @@ Unset "Section6"
           offset: 0,
         },
         end: {
-          line: 47,
+          line: 52,
           column: 1,
-          offset: 1330,
+          offset: 1465,
         },
       },
     },
@@ -283,14 +293,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 47,
+          line: 52,
           column: 1,
-          offset: 1330,
+          offset: 1465,
         },
         end: {
-          line: 64,
+          line: 69,
           column: 1,
-          offset: 2024,
+          offset: 2159,
         },
       },
     },
@@ -313,14 +323,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 64,
+          line: 69,
           column: 1,
-          offset: 2024,
+          offset: 2159,
         },
         end: {
-          line: 73,
+          line: 78,
           column: 1,
-          offset: 2335,
+          offset: 2470,
         },
       },
     },
@@ -339,14 +349,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 73,
+          line: 78,
           column: 1,
-          offset: 2335,
+          offset: 2470,
         },
         end: {
-          line: 79,
+          line: 84,
           column: 1,
-          offset: 2555,
+          offset: 2690,
         },
       },
     },
@@ -363,14 +373,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 79,
+          line: 84,
           column: 1,
-          offset: 2555,
+          offset: 2690,
         },
         end: {
-          line: 83,
+          line: 88,
           column: 1,
-          offset: 2697,
+          offset: 2832,
         },
       },
     },
@@ -386,14 +396,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 83,
+          line: 88,
           column: 1,
-          offset: 2697,
+          offset: 2832,
         },
         end: {
-          line: 86,
+          line: 91,
           column: 1,
-          offset: 2803,
+          offset: 2938,
         },
       },
     },
