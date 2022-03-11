@@ -135,6 +135,8 @@ Show "Section1"
     CorruptedMods  >= 1
     EnchantmentPassiveNum > 5
     HasExplicitMod "Foo" "Bar"
+    HasEaterOfWorldsImplicit >= 4
+    HasSearingExarchImplicit >= 4
     AnyEnchantment True
     HasEnchantment "Foo" "Bar"
     HasInfluence "Shaper" "Elder"
@@ -231,6 +233,8 @@ Unset "Section6"
         CorruptedMods: '>= 1',
         EnchantmentPassiveNum: '> 5',
         HasExplicitMod: { ope: '=', vals: ['Foo', 'Bar'] },
+        HasEaterOfWorldsImplicit: '>= 4',
+        HasSearingExarchImplicit: '>= 4',
         AnyEnchantment: true,
         HasEnchantment: { ope: '=', vals: ['Foo', 'Bar'] },
         HasInfluence: { ope: '=', vals: ['Shaper', 'Elder'] },
@@ -257,9 +261,9 @@ Unset "Section6"
           offset: 0,
         },
         end: {
-          line: 51,
+          line: 53,
           column: 1,
-          offset: 1437,
+          offset: 1505,
         },
       },
     },
@@ -289,14 +293,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 51,
+          line: 53,
           column: 1,
-          offset: 1437,
+          offset: 1505,
         },
         end: {
-          line: 67,
+          line: 69,
           column: 1,
-          offset: 2100,
+          offset: 2168,
         },
       },
     },
@@ -319,14 +323,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 67,
+          line: 69,
           column: 1,
-          offset: 2100,
+          offset: 2168,
         },
         end: {
-          line: 76,
+          line: 78,
           column: 1,
-          offset: 2411,
+          offset: 2479,
         },
       },
     },
@@ -345,14 +349,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 76,
+          line: 78,
           column: 1,
-          offset: 2411,
+          offset: 2479,
         },
         end: {
-          line: 82,
+          line: 84,
           column: 1,
-          offset: 2631,
+          offset: 2699,
         },
       },
     },
@@ -369,14 +373,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 82,
+          line: 84,
           column: 1,
-          offset: 2631,
+          offset: 2699,
         },
         end: {
-          line: 86,
+          line: 88,
           column: 1,
-          offset: 2773,
+          offset: 2841,
         },
       },
     },
@@ -392,14 +396,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 86,
+          line: 88,
           column: 1,
-          offset: 2773,
+          offset: 2841,
         },
         end: {
-          line: 89,
+          line: 91,
           column: 1,
-          offset: 2879,
+          offset: 2947,
         },
       },
     },

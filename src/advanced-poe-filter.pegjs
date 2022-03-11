@@ -115,6 +115,8 @@ condition =
   / conditionCorruptedMods
   / conditionEnchantmentPassiveNum
   / conditionHasExplicitMod
+  / conditionHasEaterOfWorldsImplicit
+  / conditionHasSearingExarchImplicit
   / conditionAnyEnchantment
   / conditionHasEnchantment
   / conditionHasInfluence
@@ -157,6 +159,8 @@ conditionWidth                  = attr:'Width'                  __ val:condition
 conditionCorruptedMods          = attr:'CorruptedMods'          __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionEnchantmentPassiveNum  = attr:'EnchantmentPassiveNum'  __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionHasExplicitMod         = attr:'HasExplicitMod'         __ val:conditionValueNumericAndArray { return { lineType: 'condition', attr, val} }
+conditionHasEaterOfWorldsImplicit = attr:'HasEaterOfWorldsImplicit' __ val:conditionValueNumber      { return { lineType: 'condition', attr, val} }
+conditionHasSearingExarchImplicit = attr:'HasSearingExarchImplicit' __ val:conditionValueNumber      { return { lineType: 'condition', attr, val} }
 conditionAnyEnchantment         = attr:'AnyEnchantment'         __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionHasEnchantment         = attr:'HasEnchantment'         __ val:conditionValueNumericAndArray { return { lineType: 'condition', attr, val} }
 conditionHasInfluence           = attr:'HasInfluence'           __ val:conditionValueArrayOrNone     { return { lineType: 'condition', attr, val} }
