@@ -101,8 +101,6 @@ condition =
   / conditionBaseEnergyShield
   / conditionBaseEvasion
   / conditionBaseWard
-  / conditionShaperItem
-  / conditionElderItem
   / conditionFracturedItem
   / conditionSynthesisedItem
   / conditionCorrupted
@@ -146,8 +144,6 @@ conditionBaseArmour             = attr:'BaseArmour'             __ val:condition
 conditionBaseEnergyShield       = attr:'BaseEnergyShield'       __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionBaseEvasion            = attr:'BaseEvasion'            __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionBaseWard               = attr:'BaseWard'               __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
-conditionShaperItem             = attr:'ShaperItem'             __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
-conditionElderItem              = attr:'ElderItem'              __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionFracturedItem          = attr:'FracturedItem'          __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionSynthesisedItem        = attr:'SynthesisedItem'        __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionCorrupted              = attr:'Corrupted'              __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
