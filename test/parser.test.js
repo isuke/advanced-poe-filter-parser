@@ -103,7 +103,6 @@ test('parse : all actions and conditions', (t) => {
 Show "Section1"
     Class          "Maps"
     BaseType       "Sacrificial Garb"
-    Prophecy       == "Foo"
     DropLevel      > 85
     ItemLevel      >= 70
     AreaLevel      < 30
@@ -154,7 +153,6 @@ Show "Section1"
 Show "Section2"
     Class          "Life Flasks" "Mana Flasks" "Hybrid Flasks"
     BaseType       "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Bone Helmet"
-    Prophecy       "Foo" "Bar"
     SocketGroup    W
     Rarity         Rare
     HasExplicitMod == "Foo" "Bar"
@@ -201,7 +199,6 @@ Unset "Section6"
       conditions: {
         Class: { ope: '=', vals: ['Maps'] },
         BaseType: { ope: '=', vals: ['Sacrificial Garb'] },
-        Prophecy: { ope: '==', vals: ['Foo'] },
         DropLevel: '> 85',
         ItemLevel: '>= 70',
         AreaLevel: '< 30',
@@ -260,9 +257,9 @@ Unset "Section6"
           offset: 0,
         },
         end: {
-          line: 52,
+          line: 51,
           column: 1,
-          offset: 1465,
+          offset: 1437,
         },
       },
     },
@@ -273,7 +270,6 @@ Unset "Section6"
       conditions: {
         Class: { ope: '=', vals: ['Life Flasks', 'Mana Flasks', 'Hybrid Flasks'] },
         BaseType: { ope: '=', vals: ['Two-Toned Boots', 'Spiked Gloves', 'Gripped Gloves', 'Fingerless Silk Gloves', 'Bone Helmet'] },
-        Prophecy: { ope: '=', vals: ['Foo', 'Bar'] },
         SocketGroup: 'W',
         Rarity: 'Rare',
         HasExplicitMod: { ope: '==', vals: ['Foo', 'Bar'] },
@@ -293,14 +289,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 52,
+          line: 51,
           column: 1,
-          offset: 1465,
+          offset: 1437,
         },
         end: {
-          line: 69,
+          line: 67,
           column: 1,
-          offset: 2159,
+          offset: 2100,
         },
       },
     },
@@ -323,14 +319,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 69,
+          line: 67,
           column: 1,
-          offset: 2159,
+          offset: 2100,
         },
         end: {
-          line: 78,
+          line: 76,
           column: 1,
-          offset: 2470,
+          offset: 2411,
         },
       },
     },
@@ -349,14 +345,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 78,
+          line: 76,
           column: 1,
-          offset: 2470,
+          offset: 2411,
         },
         end: {
-          line: 84,
+          line: 82,
           column: 1,
-          offset: 2690,
+          offset: 2631,
         },
       },
     },
@@ -373,14 +369,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 84,
+          line: 82,
           column: 1,
-          offset: 2690,
+          offset: 2631,
         },
         end: {
-          line: 88,
+          line: 86,
           column: 1,
-          offset: 2832,
+          offset: 2773,
         },
       },
     },
@@ -396,14 +392,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 88,
+          line: 86,
           column: 1,
-          offset: 2832,
+          offset: 2773,
         },
         end: {
-          line: 91,
+          line: 89,
           column: 1,
-          offset: 2938,
+          offset: 2879,
         },
       },
     },

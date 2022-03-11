@@ -83,7 +83,6 @@ commentline = _* '#' [^\n]* br
 condition =
     conditionClass
   / conditionBaseType
-  / conditionProphecy
   / conditionDropLevel
   / conditionItemLevel
   / conditionAreaLevel
@@ -126,7 +125,6 @@ condition =
 // Condition Attributes
 conditionClass                  = attr:'Class'                  __ val:conditionValueArray           { return { lineType: 'condition', attr, val} }
 conditionBaseType               = attr:'BaseType'               __ val:conditionValueArray           { return { lineType: 'condition', attr, val} }
-conditionProphecy               = attr:'Prophecy'               __ val:conditionValueArray           { return { lineType: 'condition', attr, val} }
 conditionDropLevel              = attr:'DropLevel'              __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionItemLevel              = attr:'ItemLevel'              __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionAreaLevel              = attr:'AreaLevel'              __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
