@@ -152,6 +152,7 @@ Show "Section1"
     CustomAlertSound         "C\\foobar\\sound.mp3" 300
     MinimapIcon              0 Red Circle
     PlayEffect               Red
+    ArchnemesisMod           "Toxic"
 Show "Section2"
     Class          "Life Flasks" "Mana Flasks" "Hybrid Flasks"
     BaseType       "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Bone Helmet"
@@ -241,6 +242,7 @@ Unset "Section6"
         EnchantmentPassiveNode: { ope: '=', vals: ['Damage while you have a Herald', 'Projectile Damage'] },
         AlternateQuality: true,
         Replica: true,
+        ArchnemesisMod: { ope: '=', vals: ['Toxic'] },
       },
       actions: {
         SetBorderColor: { rgb: { r: 100, g: 101, b: 102 }, alpha: 255 },
@@ -261,9 +263,9 @@ Unset "Section6"
           offset: 0,
         },
         end: {
-          line: 53,
+          line: 54,
           column: 1,
-          offset: 1505,
+          offset: 1542,
         },
       },
     },
@@ -293,14 +295,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 53,
+          line: 54,
           column: 1,
-          offset: 1505,
+          offset: 1542,
         },
         end: {
-          line: 69,
+          line: 70,
           column: 1,
-          offset: 2168,
+          offset: 2205,
         },
       },
     },
@@ -323,14 +325,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 69,
+          line: 70,
           column: 1,
-          offset: 2168,
+          offset: 2205,
         },
         end: {
-          line: 78,
+          line: 79,
           column: 1,
-          offset: 2479,
+          offset: 2516,
         },
       },
     },
@@ -349,14 +351,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 78,
+          line: 79,
           column: 1,
-          offset: 2479,
+          offset: 2516,
         },
         end: {
-          line: 84,
+          line: 85,
           column: 1,
-          offset: 2699,
+          offset: 2736,
         },
       },
     },
@@ -373,14 +375,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 84,
+          line: 85,
           column: 1,
-          offset: 2699,
+          offset: 2736,
         },
         end: {
-          line: 88,
+          line: 89,
           column: 1,
-          offset: 2841,
+          offset: 2878,
         },
       },
     },
@@ -396,14 +398,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 88,
+          line: 89,
           column: 1,
-          offset: 2841,
+          offset: 2878,
         },
         end: {
-          line: 91,
+          line: 92,
           column: 1,
-          offset: 2947,
+          offset: 2984,
         },
       },
     },

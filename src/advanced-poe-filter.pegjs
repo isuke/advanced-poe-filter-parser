@@ -123,6 +123,7 @@ condition =
   / conditionEnchantmentPassiveNode
   / conditionAlternateQuality
   / conditionReplica
+  / conditionArchnemesisMod
 
 // Condition Attributes
 conditionClass                  = attr:'Class'                  __ val:conditionValueArray           { return { lineType: 'condition', attr, val} }
@@ -167,6 +168,8 @@ conditionHasInfluence           = attr:'HasInfluence'           __ val:condition
 conditionEnchantmentPassiveNode = attr:'EnchantmentPassiveNode' __ val:conditionValueArray           { return { lineType: 'condition', attr, val} }
 conditionAlternateQuality       = attr:'AlternateQuality'       __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionReplica                = attr:'Replica'                __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
+conditionArchnemesisMod         = attr:'ArchnemesisMod'         __ val:conditionValueArray           { return { lineType: 'condition', attr, val} }
+
 
 // Condition Values
 conditionValueArray = operator:(matchOperator __)? names:names { return operator ? { ope: operator[0], vals: names } : { ope: '=', vals: names } }
