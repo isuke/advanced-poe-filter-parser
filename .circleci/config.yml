@@ -1,0 +1,15 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@4.7
+
+jobs:
+  build:
+    docker:
+      - image: cimg/node:16.18.0
+    steps:
+      - checkout
+      - run: yarn
+      - run: yarn run build
+      - run: yarn run lint
+      - run: yarn run test
