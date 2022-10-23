@@ -1,19 +1,8 @@
-:chapter-label:
-:icons: font
-:lang: en
-:sectanchors:
-:sectlinks:
-:sectnums:
-:sectnumlevels: 1
-:source-highlighter: highlightjs
-:toc: preamble
-:toclevels: 1
+# Advanced PoE Filter Parser [![CircleCI](https://dl.circleci.com/status-badge/img/gh/isuke/advanced-poe-filter-parser/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/isuke/advanced-poe-filter-parser/tree/master) [![git-consistent friendly](https://img.shields.io/badge/git--consistent-friendly-brightgreen.svg)](https://github.com/isuke/git-consistent) [![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](https://raw.githubusercontent.com/isuke/vscode-advanced-poe-filter/master/LICENSE) [![npm](https://img.shields.io/npm/v/advanced-poe-filter-parser.svg)](https://www.npmjs.com/package/advanced-poe-filter-parser)
 
-= Advanced PoE Filter Parser image:https://img.shields.io/github/license/mashape/apistatus.svg["MIT", link="https://raw.githubusercontent.com/isuke/vscode-advanced-poe-filter/master/LICENSE"] image:https://travis-ci.org/isuke/advanced-poe-filter-parser.svg?branch=master["Build Status", link="https://travis-ci.org/isuke/advanced-poe-filter-parser"] image:https://img.shields.io/npm/v/advanced-poe-filter-parser.svg["npm",link="https://www.npmjs.com/package/advanced-poe-filter-parser"] image:https://img.shields.io/badge/git--consistent-friendly-brightgreen.svg["git-consistent friendly",link="https://github.com/isuke/git-consistent"]
+Advanced PoE Filter is used by [Filter of Kalarandra](https://filter-of-kalandra.netlify.com/).
 
-Advanced PoE Filter is used by link:https://filter-of-kalandra.netlify.com/[Filter of Kalarandra].
-
-== Usage
+## Usage
 
 ```js
 import { parse, SyntaxError } from "advanced-poe-filter-parser"

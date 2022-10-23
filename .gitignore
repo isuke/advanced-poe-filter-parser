@@ -5,7 +5,3 @@ yarn-error.log
 
 lib/*
 !/**/.keep
-
-# I use README.adoc.
-# README.md for only npm.
-README.md
