@@ -18,8 +18,8 @@
     "fix": "eslint --fix ./*.js test/**/*.js",
     "test": "ava --verbose",
     "build": "pegjs --format=es -o lib/parser.js src/advanced-poe-filter.pegjs",
-    "predeploy": "yarn run build",
-    "deploy": "yarn publish"
+    "predeploy": "npm run build",
+    "deploy": "npm publish"
   },
   "dependencies": {},
   "devDependencies": {
