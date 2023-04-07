@@ -125,6 +125,7 @@ condition =
   / conditionAlternateQuality
   / conditionReplica
   / conditionArchnemesisMod
+  / conditionHasCruciblePassiveTree
 
 // Condition Attributes
 conditionClass                  = attr:'Class'                  __ val:conditionValueArray           { return { lineType: 'condition', attr, val} }
@@ -171,6 +172,7 @@ conditionEnchantmentPassiveNode = attr:'EnchantmentPassiveNode' __ val:condition
 conditionAlternateQuality       = attr:'AlternateQuality'       __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionReplica                = attr:'Replica'                __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionArchnemesisMod         = attr:'ArchnemesisMod'         __ val:conditionValueArray           { return { lineType: 'condition', attr, val} }
+conditionHasCruciblePassiveTree = attr:'HasCruciblePassiveTree' __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 
 
 // Condition Values
