@@ -8,7 +8,7 @@
   ],
   "homepage": "https://github.com/isuke/advanced-poe-filter-parser",
   "repository": "git@github.com:isuke/advanced-poe-filter-parser.git",
-  "main": "lib/parser.js",
+  "main": "lib/parser.mjs",
   "author": "isuke <isuke770@gmail.com>",
   "license": "MIT",
   "private": false,
@@ -17,7 +17,7 @@
     "lint": "eslint ./*.js test/**/*.js",
     "fix": "eslint --fix ./*.js test/**/*.js",
     "test": "ava --verbose",
-    "build": "pegjs --format=es -o lib/parser.js src/advanced-poe-filter.pegjs",
+    "build": "pegjs --format=es -o lib/parser.mjs src/advanced-poe-filter.pegjs",
     "predeploy": "npm run build",
     "deploy": "npm publish"
   },

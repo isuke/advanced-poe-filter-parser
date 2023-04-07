@@ -1,7 +1,7 @@
 import test from 'ava'
 import outdent from 'outdent'
 
-import { parse } from '../lib/parser.js'
+import { parse } from '../lib/parser.mjs'
 
 test('parse : blank and comment lines', (t) => {
   const script = [
