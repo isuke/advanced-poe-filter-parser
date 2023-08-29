@@ -1,35 +1,35 @@
-import test from 'ava'
-import outdent from 'outdent'
+import test from "ava"
+import outdent from "outdent"
 
-import { parse } from '../lib/parser.mjs'
+import { parse } from "../lib/parser.mjs"
 
-test('parse : blank and comment lines', (t) => {
+test("parse : blank and comment lines", (t) => {
   const script = [
-    '# This is a comment',
-    '# This is a comment',
+    "# This is a comment",
+    "# This is a comment",
     'Hide "Hide Map Section"',
     '    Class "Maps"',
-    '    MapTier <= 4',
-    '                 ',
-    '# This is a comment',
+    "    MapTier <= 4",
+    "                 ",
+    "# This is a comment",
     'Show "Flask Section"',
-    '    # This is a comment',
+    "    # This is a comment",
     '    Class "Life Flasks" "Mana Flasks" "Hybrid Flasks"',
-    '    SetBorderColor 250 251 252',
-    '    PlayAlertSound 1 300',
-    '                         ',
+    "    SetBorderColor 250 251 252",
+    "    PlayAlertSound 1 300",
+    "                         ",
     'Hide "Remain Section"',
-    '',
-  ].join('\n')
+    "",
+  ].join("\n")
 
   const expected = [
     {
-      id: '0001',
-      name: 'Hide Map Section',
-      activity: 'Hide',
+      id: "0001",
+      name: "Hide Map Section",
+      activity: "Hide",
       conditions: {
-        Class: { ope: '=', vals: ['Maps'] },
-        MapTier: '<= 4',
+        Class: { ope: "=", vals: ["Maps"] },
+        MapTier: "<= 4",
       },
       actions: {},
       branches: [],
@@ -47,15 +47,15 @@ test('parse : blank and comment lines', (t) => {
       },
     },
     {
-      id: '0001',
-      name: 'Flask Section',
-      activity: 'Show',
+      id: "0001",
+      name: "Flask Section",
+      activity: "Show",
       conditions: {
-        Class: { ope: '=', vals: ['Life Flasks', 'Mana Flasks', 'Hybrid Flasks'] },
+        Class: { ope: "=", vals: ["Life Flasks", "Mana Flasks", "Hybrid Flasks"] },
       },
       actions: {
         SetBorderColor: { rgb: { r: 250, g: 251, b: 252 }, alpha: 255 },
-        PlayAlertSound: { id: '1', volume: 300 },
+        PlayAlertSound: { id: "1", volume: 300 },
       },
       branches: [],
       location: {
@@ -72,9 +72,9 @@ test('parse : blank and comment lines', (t) => {
       },
     },
     {
-      id: '0001',
-      name: 'Remain Section',
-      activity: 'Hide',
+      id: "0001",
+      name: "Remain Section",
+      activity: "Hide",
       conditions: {},
       actions: {},
       branches: [],
@@ -98,7 +98,7 @@ test('parse : blank and comment lines', (t) => {
   t.deepEqual(result, expected)
 })
 
-test('parse : all actions and conditions', (t) => {
+test("parse : all actions and conditions", (t) => {
   const script = outdent`
 Show "Section1"
     Class          "Maps"
@@ -198,29 +198,29 @@ Unset "Section6"
 
   const expected = [
     {
-      id: '0001',
-      name: 'Section1',
-      activity: 'Show',
+      id: "0001",
+      name: "Section1",
+      activity: "Show",
       conditions: {
-        Class: { ope: '=', vals: ['Maps'] },
-        BaseType: { ope: '=', vals: ['Sacrificial Garb'] },
-        DropLevel: '> 85',
-        ItemLevel: '>= 70',
-        AreaLevel: '< 30',
-        GemLevel: '= 10',
-        GemQualityType: { ope: '=', vals: ['Superior'] },
-        StackSize: '< 11',
-        MapTier: '<= 12',
-        Quality: '= 15',
-        LinkedSockets: '= 6',
-        Sockets: '= 5',
-        SocketGroup: 'RGB',
-        Rarity: '= Rare',
-        BaseDefencePercentile: '> 50',
-        BaseArmour: '> 40',
-        BaseEnergyShield: '> 41',
-        BaseEvasion: '> 42',
-        BaseWard: '> 43',
+        Class: { ope: "=", vals: ["Maps"] },
+        BaseType: { ope: "=", vals: ["Sacrificial Garb"] },
+        DropLevel: "> 85",
+        ItemLevel: ">= 70",
+        AreaLevel: "< 30",
+        GemLevel: "= 10",
+        GemQualityType: { ope: "=", vals: ["Superior"] },
+        StackSize: "< 11",
+        MapTier: "<= 12",
+        Quality: "= 15",
+        LinkedSockets: "= 6",
+        Sockets: "= 5",
+        SocketGroup: "RGB",
+        Rarity: "= Rare",
+        BaseDefencePercentile: "> 50",
+        BaseArmour: "> 40",
+        BaseEnergyShield: "> 41",
+        BaseEvasion: "> 42",
+        BaseWard: "> 43",
         FracturedItem: false,
         SynthesisedItem: false,
         Corrupted: true,
@@ -231,24 +231,24 @@ Unset "Section6"
         ElderMap: true,
         BlightedMap: true,
         UberBlightedMap: true,
-        Height: '> 1',
-        Width: '> 2',
-        CorruptedMods: '>= 1',
-        EnchantmentPassiveNum: '> 5',
-        HasExplicitMod: { ope: '=', vals: ['Foo', 'Bar'] },
+        Height: "> 1",
+        Width: "> 2",
+        CorruptedMods: ">= 1",
+        EnchantmentPassiveNum: "> 5",
+        HasExplicitMod: { ope: "=", vals: ["Foo", "Bar"] },
         HasImplicitMod: true,
-        HasEaterOfWorldsImplicit: '>= 4',
-        HasSearingExarchImplicit: '>= 4',
+        HasEaterOfWorldsImplicit: ">= 4",
+        HasSearingExarchImplicit: ">= 4",
         AnyEnchantment: true,
-        HasEnchantment: { ope: '=', vals: ['Foo', 'Bar'] },
-        HasInfluence: { ope: '=', vals: ['Shaper', 'Elder'] },
+        HasEnchantment: { ope: "=", vals: ["Foo", "Bar"] },
+        HasInfluence: { ope: "=", vals: ["Shaper", "Elder"] },
         EnchantmentPassiveNode: {
-          ope: '=',
-          vals: ['Damage while you have a Herald', 'Projectile Damage'],
+          ope: "=",
+          vals: ["Damage while you have a Herald", "Projectile Damage"],
         },
         AlternateQuality: true,
         Replica: true,
-        ArchnemesisMod: { ope: '=', vals: ['Toxic'] },
+        ArchnemesisMod: { ope: "=", vals: ["Toxic"] },
         HasCruciblePassiveTree: true,
       },
       actions: {
@@ -256,11 +256,11 @@ Unset "Section6"
         SetTextColor: { rgb: { r: 103, g: 104, b: 105 }, alpha: 255 },
         SetBackgroundColor: { rgb: { r: 106, g: 107, b: 108 }, alpha: 255 },
         SetFontSize: 30,
-        PlayAlertSound: { id: '16', volume: 300 },
+        PlayAlertSound: { id: "16", volume: 300 },
         EnableDropSound: true,
-        CustomAlertSound: { filePath: 'C\\foobar\\sound.mp3', volume: 300 },
-        MinimapIcon: { size: 'Largest', color: 'Red', shape: 'Circle' },
-        PlayEffect: { color: 'Red', temp: false },
+        CustomAlertSound: { filePath: "C\\foobar\\sound.mp3", volume: 300 },
+        MinimapIcon: { size: "Largest", color: "Red", shape: "Circle" },
+        PlayEffect: { color: "Red", temp: false },
       },
       branches: [],
       location: {
@@ -277,36 +277,36 @@ Unset "Section6"
       },
     },
     {
-      id: '0001',
-      name: 'Section2',
-      activity: 'Show',
+      id: "0001",
+      name: "Section2",
+      activity: "Show",
       conditions: {
         Class: {
-          ope: '=',
-          vals: ['Life Flasks', 'Mana Flasks', 'Hybrid Flasks'],
+          ope: "=",
+          vals: ["Life Flasks", "Mana Flasks", "Hybrid Flasks"],
         },
         BaseType: {
-          ope: '=',
-          vals: ['Two-Toned Boots', 'Spiked Gloves', 'Gripped Gloves', 'Fingerless Silk Gloves', 'Bone Helmet'],
+          ope: "=",
+          vals: ["Two-Toned Boots", "Spiked Gloves", "Gripped Gloves", "Fingerless Silk Gloves", "Bone Helmet"],
         },
-        SocketGroup: 'W',
-        Rarity: 'Rare',
-        HasExplicitMod: { ope: '==', vals: ['Foo', 'Bar'] },
-        HasEnchantment: { ope: '==', vals: ['Foo', 'Bar'] },
-        HasInfluence: { ope: '==', vals: ['Shaper', 'Elder'] },
+        SocketGroup: "W",
+        Rarity: "Rare",
+        HasExplicitMod: { ope: "==", vals: ["Foo", "Bar"] },
+        HasEnchantment: { ope: "==", vals: ["Foo", "Bar"] },
+        HasInfluence: { ope: "==", vals: ["Shaper", "Elder"] },
       },
       actions: {
         SetBorderColor: { rgb: { r: 100, g: 101, b: 102 }, alpha: 200 },
         SetTextColor: { rgb: { r: 103, g: 104, b: 105 }, alpha: 201 },
         SetBackgroundColor: { rgb: { r: 106, g: 107, b: 108 }, alpha: 202 },
-        PlayAlertSound: { id: '2', volume: undefined },
+        PlayAlertSound: { id: "2", volume: undefined },
         DisableDropSound: true,
         CustomAlertSound: {
-          filePath: 'C\\foobar\\sound.mp3',
+          filePath: "C\\foobar\\sound.mp3",
           volume: undefined,
         },
-        MinimapIcon: { size: 'Medium', color: 'Red', shape: 'Circle' },
-        PlayEffect: { color: 'Blue', temp: true },
+        MinimapIcon: { size: "Medium", color: "Red", shape: "Circle" },
+        PlayEffect: { color: "Blue", temp: true },
       },
       branches: [],
       location: {
@@ -323,26 +323,26 @@ Unset "Section6"
       },
     },
     {
-      id: '0001',
-      name: 'Section3',
-      activity: 'Show',
+      id: "0001",
+      name: "Section3",
+      activity: "Show",
       conditions: {
         HasExplicitMod: {
-          numeric: { ope: '>=', val: 2 },
-          vals: ['Foo', 'Bar'],
+          numeric: { ope: ">=", val: 2 },
+          vals: ["Foo", "Bar"],
         },
         HasEnchantment: {
-          numeric: { ope: '>=', val: 2 },
-          vals: ['Foo', 'Bar'],
+          numeric: { ope: ">=", val: 2 },
+          vals: ["Foo", "Bar"],
         },
-        HasInfluence: { ope: undefined, val: 'None' },
+        HasInfluence: { ope: undefined, val: "None" },
       },
       actions: {
-        SetBorderColor: { function: 'Negate', val: undefined },
-        SetTextColor: { function: 'Grayscale', val: undefined },
-        SetBackgroundColor: { function: 'Lighten', val: 0.1 },
-        SetFontSize: { function: 'Plus', val: 5 },
-        PlayAlertSoundPositional: { id: 'ShAlchemy', volume: 200 },
+        SetBorderColor: { function: "Negate", val: undefined },
+        SetTextColor: { function: "Grayscale", val: undefined },
+        SetBackgroundColor: { function: "Lighten", val: 0.1 },
+        SetFontSize: { function: "Plus", val: 5 },
+        PlayAlertSoundPositional: { id: "ShAlchemy", volume: 200 },
       },
       branches: [],
       location: {
@@ -359,16 +359,16 @@ Unset "Section6"
       },
     },
     {
-      id: '0001',
-      name: 'Section4',
-      activity: 'Ignore',
+      id: "0001",
+      name: "Section4",
+      activity: "Ignore",
       conditions: {},
       actions: {
-        SetBorderColor: { function: 'Darken', val: 0.2 },
-        SetTextColor: { function: 'Whiten', val: 0.31 },
-        SetBackgroundColor: { function: 'Blacken', val: 1 },
-        SetFontSize: { function: 'Minus', val: 6 },
-        PlayAlertSoundPositional: { id: 'ShBlessed', volume: undefined },
+        SetBorderColor: { function: "Darken", val: 0.2 },
+        SetTextColor: { function: "Whiten", val: 0.31 },
+        SetBackgroundColor: { function: "Blacken", val: 1 },
+        SetFontSize: { function: "Minus", val: 6 },
+        PlayAlertSoundPositional: { id: "ShBlessed", volume: undefined },
       },
       branches: [],
       location: {
@@ -385,14 +385,14 @@ Unset "Section6"
       },
     },
     {
-      id: '0001',
-      name: 'Section5',
-      activity: 'Hide',
+      id: "0001",
+      name: "Section5",
+      activity: "Hide",
       conditions: {},
       actions: {
-        SetBorderColor: { function: 'Saturate', val: 0.42 },
-        SetTextColor: { function: 'Desaturate', val: 0.53 },
-        SetBackgroundColor: { function: 'Hex', val: 123 },
+        SetBorderColor: { function: "Saturate", val: 0.42 },
+        SetTextColor: { function: "Desaturate", val: 0.53 },
+        SetBackgroundColor: { function: "Hex", val: 123 },
       },
       branches: [],
       location: {
@@ -409,13 +409,13 @@ Unset "Section6"
       },
     },
     {
-      id: '0001',
-      name: 'Section6',
-      activity: 'Unset',
+      id: "0001",
+      name: "Section6",
+      activity: "Unset",
       conditions: {},
       actions: {
-        SetBorderColor: { function: 'Saturationv', val: 64 },
-        SetTextColor: { function: 'Lightness', val: 75 },
+        SetBorderColor: { function: "Saturationv", val: 64 },
+        SetTextColor: { function: "Lightness", val: 75 },
       },
       branches: [],
       location: {
@@ -438,7 +438,7 @@ Unset "Section6"
   t.deepEqual(result, expected)
 })
 
-test('parse : empty section', (t) => {
+test("parse : empty section", (t) => {
   const script = outdent`
 Hide "All Section"
 
@@ -446,9 +446,9 @@ Hide "All Section"
 
   const expected = [
     {
-      id: '0001',
-      name: 'All Section',
-      activity: 'Hide',
+      id: "0001",
+      name: "All Section",
+      activity: "Hide",
       conditions: {},
       actions: {},
       branches: [],
@@ -472,7 +472,7 @@ Hide "All Section"
   t.deepEqual(result, expected)
 })
 
-test('parse : single section', (t) => {
+test("parse : single section", (t) => {
   const script = outdent`
 Show "Map Section"
     Class "Maps"
@@ -484,16 +484,16 @@ Show "Map Section"
 
   const expected = [
     {
-      id: '0001',
-      name: 'Map Section',
-      activity: 'Show',
+      id: "0001",
+      name: "Map Section",
+      activity: "Show",
       conditions: {
-        Class: { ope: '=', vals: ['Maps'] },
-        MapTier: '> 3',
+        Class: { ope: "=", vals: ["Maps"] },
+        MapTier: "> 3",
       },
       actions: {
         SetBorderColor: { rgb: { r: 250, g: 251, b: 252 }, alpha: 255 },
-        PlayAlertSound: { id: '1', volume: 300 },
+        PlayAlertSound: { id: "1", volume: 300 },
       },
       branches: [],
       location: {
@@ -516,7 +516,7 @@ Show "Map Section"
   t.deepEqual(result, expected)
 })
 
-test('parse : multi section', (t) => {
+test("parse : multi section", (t) => {
   const script = outdent`
 Hide "Hide Map Section"
     Class "Maps"
@@ -533,12 +533,12 @@ Hide "Remain Section"
 
   const expected = [
     {
-      id: '0001',
-      name: 'Hide Map Section',
-      activity: 'Hide',
+      id: "0001",
+      name: "Hide Map Section",
+      activity: "Hide",
       conditions: {
-        Class: { ope: '=', vals: ['Maps'] },
-        MapTier: '<= 4',
+        Class: { ope: "=", vals: ["Maps"] },
+        MapTier: "<= 4",
       },
       actions: {},
       branches: [],
@@ -556,15 +556,15 @@ Hide "Remain Section"
       },
     },
     {
-      id: '0001',
-      name: 'Flask Section',
-      activity: 'Show',
+      id: "0001",
+      name: "Flask Section",
+      activity: "Show",
       conditions: {
-        Class: { ope: '=', vals: ['Life Flasks', 'Mana Flasks', 'Hybrid Flasks'] },
+        Class: { ope: "=", vals: ["Life Flasks", "Mana Flasks", "Hybrid Flasks"] },
       },
       actions: {
         SetBorderColor: { rgb: { r: 250, g: 251, b: 252 }, alpha: 255 },
-        PlayAlertSound: { id: '1', volume: 300 },
+        PlayAlertSound: { id: "1", volume: 300 },
       },
       branches: [],
       location: {
@@ -581,9 +581,9 @@ Hide "Remain Section"
       },
     },
     {
-      id: '0001',
-      name: 'Remain Section',
-      activity: 'Hide',
+      id: "0001",
+      name: "Remain Section",
+      activity: "Hide",
       conditions: {},
       actions: {},
       branches: [],
@@ -607,7 +607,7 @@ Hide "Remain Section"
   t.deepEqual(result, expected)
 })
 
-test('parse : single fork', (t) => {
+test("parse : single fork", (t) => {
   const script = outdent`
 Show "Map Section"
     Class "Maps"
@@ -627,27 +627,27 @@ Show "Map Section"
 
   const expected = [
     {
-      id: '0003',
-      name: 'Map Section',
-      activity: 'Show',
+      id: "0003",
+      name: "Map Section",
+      activity: "Show",
       conditions: {
-        Class: { ope: '=', vals: ['Maps'] },
-        MapTier: '> 3',
+        Class: { ope: "=", vals: ["Maps"] },
+        MapTier: "> 3",
       },
       actions: {
         SetBorderColor: { rgb: { r: 250, g: 251, b: 252 }, alpha: 255 },
-        PlayAlertSound: { id: '1', volume: 300 },
+        PlayAlertSound: { id: "1", volume: 300 },
       },
       branches: [
         {
-          name: 'Rarity',
-          type: 'Fork',
+          name: "Rarity",
+          type: "Fork",
           blocks: [
             {
-              id: '0001',
-              name: 'Rare',
-              activity: 'Show',
-              conditions: { Rarity: 'Rare' },
+              id: "0001",
+              name: "Rare",
+              activity: "Show",
+              conditions: { Rarity: "Rare" },
               actions: { SetBackgroundColor: { rgb: { r: 255, g: 0, b: 0 }, alpha: 100 } },
               branches: [],
               location: {
@@ -664,10 +664,10 @@ Show "Map Section"
               },
             },
             {
-              id: '0002',
-              name: 'Magic',
-              activity: 'Hide',
-              conditions: { Rarity: 'Magic' },
+              id: "0002",
+              name: "Magic",
+              activity: "Hide",
+              conditions: { Rarity: "Magic" },
               actions: {},
               branches: [],
               location: {
@@ -718,7 +718,7 @@ Show "Map Section"
   t.deepEqual(result, expected)
 })
 
-test('parse : single mixin', (t) => {
+test("parse : single mixin", (t) => {
   const script = outdent`
 Show "Map Section"
     Class "Maps"
@@ -738,27 +738,27 @@ Show "Map Section"
 
   const expected = [
     {
-      id: '0003',
-      name: 'Map Section',
-      activity: 'Show',
+      id: "0003",
+      name: "Map Section",
+      activity: "Show",
       conditions: {
-        Class: { ope: '=', vals: ['Maps'] },
-        MapTier: '> 3',
+        Class: { ope: "=", vals: ["Maps"] },
+        MapTier: "> 3",
       },
       actions: {
         SetBorderColor: { rgb: { r: 250, g: 251, b: 252 }, alpha: 255 },
-        PlayAlertSound: { id: '1', volume: 300 },
+        PlayAlertSound: { id: "1", volume: 300 },
       },
       branches: [
         {
-          name: 'Rarity',
-          type: 'Mixin',
+          name: "Rarity",
+          type: "Mixin",
           blocks: [
             {
-              id: '0001',
-              name: 'Rare',
-              activity: 'Show',
-              conditions: { Rarity: 'Rare' },
+              id: "0001",
+              name: "Rare",
+              activity: "Show",
+              conditions: { Rarity: "Rare" },
               actions: { SetBackgroundColor: { rgb: { r: 255, g: 0, b: 0 }, alpha: 100 } },
               branches: [],
               location: {
@@ -775,10 +775,10 @@ Show "Map Section"
               },
             },
             {
-              id: '0002',
-              name: 'Magic',
-              activity: 'Hide',
-              conditions: { Rarity: 'Magic' },
+              id: "0002",
+              name: "Magic",
+              activity: "Hide",
+              conditions: { Rarity: "Magic" },
               actions: {},
               branches: [],
               location: {
@@ -829,7 +829,7 @@ Show "Map Section"
   t.deepEqual(result, expected)
 })
 
-test('parse : multi mixin', (t) => {
+test("parse : multi mixin", (t) => {
   const script = outdent`
 Show "Map Section"
     Class "Maps"
@@ -855,23 +855,23 @@ Show "Map Section"
 
   const expected = [
     {
-      id: '0005',
-      name: 'Map Section',
-      activity: 'Show',
+      id: "0005",
+      name: "Map Section",
+      activity: "Show",
       conditions: {
-        Class: { ope: '=', vals: ['Maps'] },
+        Class: { ope: "=", vals: ["Maps"] },
       },
       actions: {},
       branches: [
         {
-          name: 'Rarity',
-          type: 'Mixin',
+          name: "Rarity",
+          type: "Mixin",
           blocks: [
             {
-              id: '0001',
-              name: 'Rare',
-              activity: 'Show',
-              conditions: { Rarity: 'Rare' },
+              id: "0001",
+              name: "Rare",
+              activity: "Show",
+              conditions: { Rarity: "Rare" },
               actions: { SetBackgroundColor: { rgb: { r: 255, g: 0, b: 0 }, alpha: 100 } },
               branches: [],
               location: {
@@ -888,10 +888,10 @@ Show "Map Section"
               },
             },
             {
-              id: '0002',
-              name: 'Magic',
-              activity: 'Hide',
-              conditions: { Rarity: 'Magic' },
+              id: "0002",
+              name: "Magic",
+              activity: "Hide",
+              conditions: { Rarity: "Magic" },
               actions: {},
               branches: [],
               location: {
@@ -922,15 +922,15 @@ Show "Map Section"
           },
         },
         {
-          name: 'Tier',
-          type: 'Mixin',
+          name: "Tier",
+          type: "Mixin",
           blocks: [
             {
-              id: '0003',
-              name: 'High Tier',
-              activity: 'Show',
-              conditions: { MapTier: '>= 11' },
-              actions: { PlayAlertSound: { id: '1', volume: 300 } },
+              id: "0003",
+              name: "High Tier",
+              activity: "Show",
+              conditions: { MapTier: ">= 11" },
+              actions: { PlayAlertSound: { id: "1", volume: 300 } },
               branches: [],
               location: {
                 start: {
@@ -946,11 +946,11 @@ Show "Map Section"
               },
             },
             {
-              id: '0004',
-              name: 'Middle Tier',
-              activity: 'Show',
-              conditions: { MapTier: '>= 6' },
-              actions: { PlayAlertSound: { id: '2', volume: 300 } },
+              id: "0004",
+              name: "Middle Tier",
+              activity: "Show",
+              conditions: { MapTier: ">= 6" },
+              actions: { PlayAlertSound: { id: "2", volume: 300 } },
               branches: [],
               location: {
                 start: {
@@ -1000,7 +1000,7 @@ Show "Map Section"
   t.deepEqual(result, expected)
 })
 
-test('parse : nested mixin', (t) => {
+test("parse : nested mixin", (t) => {
   const script = outdent`
 Show "Map Section"
     Class "Maps"
@@ -1026,23 +1026,23 @@ Show "Map Section"
 
   const expected = [
     {
-      id: '0005',
-      name: 'Map Section',
-      activity: 'Show',
+      id: "0005",
+      name: "Map Section",
+      activity: "Show",
       conditions: {
-        Class: { ope: '=', vals: ['Maps'] },
+        Class: { ope: "=", vals: ["Maps"] },
       },
       actions: {},
       branches: [
         {
-          name: 'Rarity',
-          type: 'Mixin',
+          name: "Rarity",
+          type: "Mixin",
           blocks: [
             {
-              id: '0001',
-              name: 'Rare',
-              activity: 'Show',
-              conditions: { Rarity: 'Rare' },
+              id: "0001",
+              name: "Rare",
+              activity: "Show",
+              conditions: { Rarity: "Rare" },
               actions: { SetBackgroundColor: { rgb: { r: 255, g: 0, b: 0 }, alpha: 100 } },
               branches: [],
               location: {
@@ -1059,22 +1059,22 @@ Show "Map Section"
               },
             },
             {
-              id: '0004',
-              name: 'Magic',
-              activity: 'Hide',
-              conditions: { Rarity: 'Magic' },
+              id: "0004",
+              name: "Magic",
+              activity: "Hide",
+              conditions: { Rarity: "Magic" },
               actions: {},
               branches: [
                 {
-                  name: 'Tier',
-                  type: 'Mixin',
+                  name: "Tier",
+                  type: "Mixin",
                   blocks: [
                     {
-                      id: '0002',
-                      name: 'High Tier',
-                      activity: 'Show',
-                      conditions: { MapTier: '>= 11' },
-                      actions: { PlayAlertSound: { id: '1', volume: 300 } },
+                      id: "0002",
+                      name: "High Tier",
+                      activity: "Show",
+                      conditions: { MapTier: ">= 11" },
+                      actions: { PlayAlertSound: { id: "1", volume: 300 } },
                       branches: [],
                       location: {
                         start: {
@@ -1090,11 +1090,11 @@ Show "Map Section"
                       },
                     },
                     {
-                      id: '0003',
-                      name: 'Middle Tier',
-                      activity: 'Show',
-                      conditions: { MapTier: '>= 6' },
-                      actions: { PlayAlertSound: { id: '2', volume: 300 } },
+                      id: "0003",
+                      name: "Middle Tier",
+                      activity: "Show",
+                      conditions: { MapTier: ">= 6" },
+                      actions: { PlayAlertSound: { id: "2", volume: 300 } },
                       branches: [],
                       location: {
                         start: {

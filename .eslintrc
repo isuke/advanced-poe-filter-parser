@@ -4,27 +4,14 @@
     "amd": true,
     "node": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:prettier/recommended"
-  ],
+  "extends": ["eslint:recommended", "prettier"],
   "parserOptions": {
-    "ecmaVersion": 2017,
+    "ecmaVersion": 2022,
     "sourceType": "module"
   },
   "rules": {
     "no-console": "off",
     "no-control-regex": "off",
-    "no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
-    "prettier/prettier": [
-      "error",
-      {
-        "semi": false,
-        "singleQuote": true,
-        "trailingComma": "es5",
-        "printWidth": 160,
-        "arrowParens": "always"
-      }
-    ]
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }]
   }
 }

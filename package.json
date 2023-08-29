@@ -14,8 +14,9 @@
   "private": false,
   "type": "module",
   "scripts": {
-    "lint": "eslint ./*.js test/**/*.js",
-    "fix": "eslint --fix ./*.js test/**/*.js",
+    "lint": "eslint test/**/*.js",
+    "lint:fix": "eslint --fix test/**/*.js",
+    "prettier": "prettier --write --log-level=warn '**/*.js'",
     "test": "ava --verbose",
     "build": "pegjs --format=es -o lib/parser.mjs src/advanced-poe-filter.pegjs",
     "predeploy": "npm run build",
