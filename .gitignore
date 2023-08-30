@@ -3,4 +3,5 @@ node_modules/
 .npmrc
 
 lib/*
+!lib/parser.d.ts
 !/**/.keep

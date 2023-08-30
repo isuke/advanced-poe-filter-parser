@@ -10,6 +10,7 @@
   "repository": "git@github.com:isuke/advanced-poe-filter-parser.git",
   "main": "lib/parser.cjs",
   "module": "lib/parser.mjs",
+  "types": "lib/parser.d.ts",
   "author": "isuke <isuke770@gmail.com>",
   "license": "MIT",
   "private": false,
