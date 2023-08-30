@@ -1,3 +1,5 @@
+type Activity = "Show" | "Hide" | "Unset" | "Ignore"
+
 type MatchOperator = "==" | "="
 type NumOperator = "<=" | ">=" | "<" | ">" | "="
 
@@ -69,7 +71,7 @@ type SoundId =
 type AdvancedBlock = {
   id: string
   name: string
-  activity: string
+  activity: Activity
   conditions: {
     Class?: { ope: MatchOperator; vals: string[] }
     BaseType?: { ope: MatchOperator; vals: string[] }
@@ -145,9 +147,6 @@ type Branch = {
   type: string
   blocks: Array<AdvancedBlock>
 }
-
-type Condition = keyof AdvancedBlock["conditions"]
-type Action = keyof AdvancedBlock["actions"]
 
 export function parse(input: string): AdvancedBlock[]
 
