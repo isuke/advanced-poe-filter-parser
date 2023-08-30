@@ -4,7 +4,7 @@
     "source.fixAll.eslint": true
   },
   "editor.formatOnSave": false,
-  "cSpell.userWords": ["synthesised", "archnemesis"],
+  "cSpell.userWords": ["pegjs", "synthesised", "archnemesis"],
   "[javascript]": {
     "editor.formatOnSave": true
   },
