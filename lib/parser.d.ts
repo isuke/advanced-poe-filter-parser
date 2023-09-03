@@ -1,5 +1,7 @@
 type Activity = "Show" | "Hide" | "Unset" | "Ignore"
 
+type BranchType = "Fork" | "Mixin"
+
 type MatchOperator = "==" | "="
 type NumOperator = "<=" | ">=" | "<" | ">" | "="
 
@@ -8,8 +10,10 @@ type Influence = "Shaper" | "Elder" | "Crusader" | "Hunter" | "Redeemer" | "Warl
 type GemQualityType = "Superior" | "Divergent" | "Anomalous" | "Phantasmal"
 type SocketType = "R" | "G" | "B" | "W" | "A" | "D"
 
+type ColorName = "Red" | "Green" | "Blue" | "Brown" | "White" | "Yellow" | "Cyan" | "Grey" | "Orange" | "Pink" | "Purple"
+
 type MinimapIconSize = 0 | 1 | 2 | "0" | "1" | "2" | "Largest" | "Medium" | "Small"
-type MinimapIconColor = "Red" | "Green" | "Blue" | "Brown" | "White" | "Yellow" | "Cyan" | "Grey" | "Orange" | "Pink" | "Purple"
+type MinimapIconColor = ColorName
 type MinimapIconShape =
   | "Circle"
   | "Diamond"
@@ -23,24 +27,8 @@ type MinimapIconShape =
   | "Kite"
   | "Pentagon"
   | "UpsideDownHouse"
-type PlayEffectColor = "Red" | "Green" | "Blue" | "Brown" | "White" | "Yellow" | "Cyan" | "Grey" | "Orange" | "Pink" | "Purple"
+type PlayEffectColor = ColorName
 type SoundId =
-  | 1
-  | 2
-  | 3
-  | 4
-  | 5
-  | 6
-  | 7
-  | 8
-  | 9
-  | 10
-  | 11
-  | 12
-  | 13
-  | 14
-  | 15
-  | 16
   | "1"
   | "2"
   | "3"
@@ -57,6 +45,22 @@ type SoundId =
   | "14"
   | "15"
   | "16"
+  | "Sh01"
+  | "Sh02"
+  | "Sh03"
+  | "Sh04"
+  | "Sh05"
+  | "Sh06"
+  | "Sh07"
+  | "Sh08"
+  | "Sh09"
+  | "Sh10"
+  | "Sh11"
+  | "Sh12"
+  | "Sh13"
+  | "Sh14"
+  | "Sh15"
+  | "Sh16"
   | "ShAlchemy"
   | "ShBlessed"
   | "ShChaos"
@@ -68,6 +72,9 @@ type SoundId =
   | "ShRegal"
   | "ShVaal"
 
+type RGBA = { rgb: { r: number; g: number; b: number }; alpha: number }
+type Sound = { id: SoundId; volume: number | undefined }
+
 type AdvancedBlock = {
   id: string
   name: string
@@ -75,7 +82,7 @@ type AdvancedBlock = {
   conditions: {
     Class?: { ope: MatchOperator; vals: string[] }
     BaseType?: { ope: MatchOperator; vals: string[] }
-    Rarity?: `${MatchOperator} ${Rarity}`
+    Rarity?: `${MatchOperator} ${Rarity}` | Rarity
     BaseDefencePercentile?: `${NumOperator} ${number}`
     BaseArmour?: `${NumOperator} ${number}`
     BaseEnergyShield?: `${NumOperator} ${number}`
@@ -121,13 +128,13 @@ type AdvancedBlock = {
   }
   actions: {
     SetFontSize?: number
-    SetTextColor?: { rgb: { r: number; g: number; b: number }; alpha: number }
-    SetBackgroundColor?: { rgb: { r: number; g: number; b: number }; alpha: number }
-    SetBorderColor?: { rgb: { r: number; g: number; b: number }; alpha: number }
+    SetTextColor?: RGBA
+    SetBackgroundColor?: RGBA
+    SetBorderColor?: RGBA
     MinimapIcon?: { size: MinimapIconSize; color: MinimapIconColor; shape: MinimapIconShape }
     PlayEffect?: { color: PlayEffectColor; temp: boolean }
-    PlayAlertSound?: { id: SoundId; volume: number | undefined }
-    PlayAlertSoundPositional?: { id: SoundId; volume: number | undefined }
+    PlayAlertSound?: Sound
+    PlayAlertSoundPositional?: Sound
     CustomAlertSound?: {
       filePath: string
       volume: number | undefined
@@ -135,7 +142,7 @@ type AdvancedBlock = {
     DisableDropSound?: boolean
     EnableDropSound?: boolean
   }
-  branches: Array<Branch>
+  branches: Branch[]
   location: {
     start: { line: number; column: number; offset: number }
     end: { line: number; column: number; offset: number }
@@ -144,15 +151,28 @@ type AdvancedBlock = {
 
 type Branch = {
   name: string
-  type: string
-  blocks: Array<AdvancedBlock>
+  type: BranchType
+  blocks: AdvancedBlock[]
+}
+
+type Condition = keyof AdvancedBlock["conditions"]
+type Action = keyof AdvancedBlock["actions"]
+
+type SyntaxError = {
+  message: string
+  found?: string
+  location: {
+    start: {
+      offset: number
+      line: number
+      column: number
+    }
+    end: {
+      offset: number
+      line: number
+      column: number
+    }
+  }
 }
 
 export function parse(input: string): AdvancedBlock[]
-
-export class SyntaxError {
-  public message: any
-  public expected: any
-  public found: any
-  public location: any
-}
