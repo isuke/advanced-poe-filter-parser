@@ -112,8 +112,8 @@ Show "Section1"
     MapTier        <= 12
     Quality        = 15
     LinkedSockets  = 6
-    Sockets        = 5
-    SocketGroup    RGB
+    Sockets        >= 5RGBWAD
+    SocketGroup    >= 5RGBWAD
     Rarity         = Rare
     BaseDefencePercentile > 50
     BaseArmour       > 40
@@ -158,7 +158,8 @@ Show "Section1"
 Show "Section2"
     Class          "Life Flasks" "Mana Flasks" "Hybrid Flasks"
     BaseType       "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Bone Helmet"
-    SocketGroup    W
+    Sockets        5RGBWAD
+    SocketGroup    5RGBWAD
     Rarity         Rare
     HasExplicitMod == "Foo" "Bar"
     HasEnchantment == "Foo" "Bar"
@@ -172,6 +173,8 @@ Show "Section2"
     MinimapIcon              Medium Red Circle
     PlayEffect               Blue Temp
 Show "Section3"
+    Sockets        RGBWAD
+    SocketGroup    RGBWAD
     HasExplicitMod >= 2 "Foo" "Bar"
     HasEnchantment >= 2 "Foo" "Bar"
     HasInfluence None
@@ -213,8 +216,8 @@ Unset "Section6"
         MapTier: "<= 12",
         Quality: "= 15",
         LinkedSockets: "= 6",
-        Sockets: "= 5",
-        SocketGroup: "RGB",
+        Sockets: ">= 5RGBWAD",
+        SocketGroup: ">= 5RGBWAD",
         Rarity: "= Rare",
         BaseDefencePercentile: "> 50",
         BaseArmour: "> 40",
@@ -272,7 +275,7 @@ Unset "Section6"
         end: {
           line: 56,
           column: 1,
-          offset: 1600,
+          offset: 1614,
         },
       },
     },
@@ -289,7 +292,8 @@ Unset "Section6"
           ope: "=",
           vals: ["Two-Toned Boots", "Spiked Gloves", "Gripped Gloves", "Fingerless Silk Gloves", "Bone Helmet"],
         },
-        SocketGroup: "W",
+        Sockets: "= 5RGBWAD",
+        SocketGroup: "= 5RGBWAD",
         Rarity: "Rare",
         HasExplicitMod: { ope: "==", vals: ["Foo", "Bar"] },
         HasEnchantment: { ope: "==", vals: ["Foo", "Bar"] },
@@ -313,12 +317,12 @@ Unset "Section6"
         start: {
           line: 56,
           column: 1,
-          offset: 1600,
+          offset: 1614,
         },
         end: {
-          line: 72,
+          line: 73,
           column: 1,
-          offset: 2263,
+          offset: 2310,
         },
       },
     },
@@ -327,6 +331,8 @@ Unset "Section6"
       name: "Section3",
       activity: "Show",
       conditions: {
+        Sockets: "= RGBWAD",
+        SocketGroup: "= RGBWAD",
         HasExplicitMod: {
           numeric: { ope: ">=", val: 2 },
           vals: ["Foo", "Bar"],
@@ -347,14 +353,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 72,
+          line: 73,
           column: 1,
-          offset: 2263,
+          offset: 2310,
         },
         end: {
-          line: 81,
+          line: 84,
           column: 1,
-          offset: 2574,
+          offset: 2673,
         },
       },
     },
@@ -373,14 +379,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 81,
+          line: 84,
           column: 1,
-          offset: 2574,
+          offset: 2673,
         },
         end: {
-          line: 87,
+          line: 90,
           column: 1,
-          offset: 2794,
+          offset: 2893,
         },
       },
     },
@@ -397,14 +403,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 87,
+          line: 90,
           column: 1,
-          offset: 2794,
+          offset: 2893,
         },
         end: {
-          line: 91,
+          line: 94,
           column: 1,
-          offset: 2936,
+          offset: 3035,
         },
       },
     },
@@ -420,14 +426,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 91,
-          column: 1,
-          offset: 2936,
-        },
-        end: {
           line: 94,
           column: 1,
-          offset: 3042,
+          offset: 3035,
+        },
+        end: {
+          line: 97,
+          column: 1,
+          offset: 3141,
         },
       },
     },

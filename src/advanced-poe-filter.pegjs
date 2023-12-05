@@ -139,8 +139,8 @@ conditionStackSize              = attr:'StackSize'              __ val:condition
 conditionMapTier                = attr:'MapTier'                __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionQuality                = attr:'Quality'                __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionLinkedSockets          = attr:'LinkedSockets'          __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
-conditionSockets                = attr:'Sockets'                __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
-conditionSocketGroup            = attr:'SocketGroup'            __ val:conditionValueSocketRGBW      { return { lineType: 'condition', attr, val} }
+conditionSockets                = attr:'Sockets'                __ val:conditionValueSocketType      { return { lineType: 'condition', attr, val} }
+conditionSocketGroup            = attr:'SocketGroup'            __ val:conditionValueSocketType      { return { lineType: 'condition', attr, val} }
 conditionRarity                 = attr:'Rarity'                 __ val:conditionValueRarity          { return { lineType: 'condition', attr, val} }
 conditionBaseDefencePercentile  = attr:'BaseDefencePercentile'  __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionBaseArmour             = attr:'BaseArmour'             __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
@@ -180,7 +180,7 @@ conditionValueArray = operator:(matchOperator __)? names:names { return operator
 conditionValueArrayOrNone = conditionValueArray / val:'None' { return val ?  { ope: undefined, val: 'None' } : { ope, vals } }
 conditionValueNumericAndArray = pre:((numOperator __ num __) / (matchOperator __))? names:names { return pre ? (pre.length === 4 ? { numeric: { ope: pre[0], val: pre[2] }, vals: names } : { ope: pre[0], vals: names } ) : { ope: '=', vals: names } }
 conditionValueNumber = operator:numOperator __ num:num { return `${operator} ${num}` }
-conditionValueSocketRGBW = socketRGBW
+conditionValueSocketType = operator:(numOperator __)? num:(num)? socketType:socketType { return operator ? `${operator[0]} ${num ? num : ''}${socketType}` : `= ${num ? num : ''}${socketType}` }
 conditionValueRarity = operator:(numOperator __)? rarity:rarity { return operator ? `${operator[0]} ${rarity}` : rarity }
 conditionValueBoolean = boolean
 
@@ -263,7 +263,7 @@ color = r:rgbaNum __ g:rgbaNum __ b:rgbaNum alpha:(__ rgbaNum)? { return { rgb: 
 numOperator = '<=' / '>=' / '<' / '>' / '='
 matchOperator = '==' / '='
 rarity = 'Normal' / 'Magic' / 'Rare' / 'Unique'
-socketRGBW = $('R'* 'G'* 'B'* 'W'*)
+socketType = $('R'* 'G'* 'B'* 'W'* 'A'* 'D'*)
 rgbaNum = num:num &{ return 0 <= num && num <= 255 } { return num }
 fontSize = num:num &{ return 18 <= num && num <= 45 } { return num }
 minimapIconSize = val:('0' / '1' / '2' / 'Largest' / 'Medium' / 'Small') {

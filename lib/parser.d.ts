@@ -97,8 +97,8 @@ type AdvancedBlock = {
     MapTier?: `${NumOperator} ${number}`
     Quality?: `${NumOperator} ${number}`
     LinkedSockets?: `${NumOperator} ${number}`
-    Sockets?: `${NumOperator} ${number}`
-    SocketGroup?: `${NumOperator} ${string}` | string
+    Sockets?: `${NumOperator} ${number}${string}`
+    SocketGroup?: `${NumOperator} ${number}${string}`
     FracturedItem?: boolean
     SynthesisedItem?: boolean
     Corrupted?: boolean
