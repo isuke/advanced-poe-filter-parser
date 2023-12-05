@@ -87,7 +87,6 @@ condition =
   / conditionItemLevel
   / conditionAreaLevel
   / conditionGemLevel
-  / conditionGemQualityType
   / conditionStackSize
   / conditionMapTier
   / conditionQuality
@@ -122,7 +121,6 @@ condition =
   / conditionHasEnchantment
   / conditionHasInfluence
   / conditionEnchantmentPassiveNode
-  / conditionAlternateQuality
   / conditionReplica
   / conditionArchnemesisMod
   / conditionHasCruciblePassiveTree
@@ -134,7 +132,6 @@ conditionDropLevel              = attr:'DropLevel'              __ val:condition
 conditionItemLevel              = attr:'ItemLevel'              __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionAreaLevel              = attr:'AreaLevel'              __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionGemLevel               = attr:'GemLevel'               __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
-conditionGemQualityType         = attr:'GemQualityType'         __ val:conditionValueArray           { return { lineType: 'condition', attr, val} }
 conditionStackSize              = attr:'StackSize'              __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionMapTier                = attr:'MapTier'                __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionQuality                = attr:'Quality'                __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
@@ -169,7 +166,6 @@ conditionAnyEnchantment         = attr:'AnyEnchantment'         __ val:condition
 conditionHasEnchantment         = attr:'HasEnchantment'         __ val:conditionValueNumericAndArray { return { lineType: 'condition', attr, val} }
 conditionHasInfluence           = attr:'HasInfluence'           __ val:conditionValueArrayOrNone     { return { lineType: 'condition', attr, val} }
 conditionEnchantmentPassiveNode = attr:'EnchantmentPassiveNode' __ val:conditionValueArray           { return { lineType: 'condition', attr, val} }
-conditionAlternateQuality       = attr:'AlternateQuality'       __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionReplica                = attr:'Replica'                __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionArchnemesisMod         = attr:'ArchnemesisMod'         __ val:conditionValueArray           { return { lineType: 'condition', attr, val} }
 conditionHasCruciblePassiveTree = attr:'HasCruciblePassiveTree' __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }

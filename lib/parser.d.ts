@@ -92,7 +92,6 @@ type AdvancedBlock = {
     ItemLevel?: `${NumOperator} ${number}`
     AreaLevel?: `${NumOperator} ${number}`
     GemLevel?: `${NumOperator} ${number}`
-    GemQualityType?: { ope: MatchOperator; vals: GemQualityType[] }
     StackSize?: `${NumOperator} ${number}`
     MapTier?: `${NumOperator} ${number}`
     Quality?: `${NumOperator} ${number}`
@@ -121,7 +120,6 @@ type AdvancedBlock = {
     HasEnchantment?: { ope: MatchOperator; vals: string[] }
     HasInfluence?: { ope: MatchOperator; vals: Influence[] }
     EnchantmentPassiveNode?: { ope: MatchOperator; vals: string[] }
-    AlternateQuality?: boolean
     Replica?: boolean
     ArchnemesisMod?: { ope: MatchOperator; vals: string[] }
     HasCruciblePassiveTree?: boolean

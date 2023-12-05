@@ -107,7 +107,6 @@ Show "Section1"
     ItemLevel      >= 70
     AreaLevel      < 30
     GemLevel       = 10
-    GemQualityType "Superior"
     StackSize      < 11
     MapTier        <= 12
     Quality        = 15
@@ -142,7 +141,6 @@ Show "Section1"
     HasEnchantment "Foo" "Bar"
     HasInfluence "Shaper" "Elder"
     EnchantmentPassiveNode "Damage while you have a Herald" "Projectile Damage"
-    AlternateQuality True
     Replica True
     SetBorderColor           100 101 102
     SetTextColor             103 104 105
@@ -211,7 +209,6 @@ Unset "Section6"
         ItemLevel: ">= 70",
         AreaLevel: "< 30",
         GemLevel: "= 10",
-        GemQualityType: { ope: "=", vals: ["Superior"] },
         StackSize: "< 11",
         MapTier: "<= 12",
         Quality: "= 15",
@@ -249,7 +246,6 @@ Unset "Section6"
           ope: "=",
           vals: ["Damage while you have a Herald", "Projectile Damage"],
         },
-        AlternateQuality: true,
         Replica: true,
         ArchnemesisMod: { ope: "=", vals: ["Toxic"] },
         HasCruciblePassiveTree: true,
@@ -273,9 +269,9 @@ Unset "Section6"
           offset: 0,
         },
         end: {
-          line: 56,
+          line: 54,
           column: 1,
-          offset: 1614,
+          offset: 1558,
         },
       },
     },
@@ -315,14 +311,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 56,
+          line: 54,
           column: 1,
-          offset: 1614,
+          offset: 1558,
         },
         end: {
-          line: 73,
+          line: 71,
           column: 1,
-          offset: 2310,
+          offset: 2254,
         },
       },
     },
@@ -353,14 +349,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 73,
+          line: 71,
           column: 1,
-          offset: 2310,
+          offset: 2254,
         },
         end: {
-          line: 84,
+          line: 82,
           column: 1,
-          offset: 2673,
+          offset: 2617,
         },
       },
     },
@@ -379,14 +375,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 84,
+          line: 82,
           column: 1,
-          offset: 2673,
+          offset: 2617,
         },
         end: {
-          line: 90,
+          line: 88,
           column: 1,
-          offset: 2893,
+          offset: 2837,
         },
       },
     },
@@ -403,14 +399,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 90,
+          line: 88,
           column: 1,
-          offset: 2893,
+          offset: 2837,
         },
         end: {
-          line: 94,
+          line: 92,
           column: 1,
-          offset: 3035,
+          offset: 2979,
         },
       },
     },
@@ -426,14 +422,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 94,
+          line: 92,
           column: 1,
-          offset: 3035,
+          offset: 2979,
         },
         end: {
-          line: 97,
+          line: 95,
           column: 1,
-          offset: 3141,
+          offset: 3085,
         },
       },
     },
