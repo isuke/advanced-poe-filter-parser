@@ -92,6 +92,7 @@ type AdvancedBlock = {
     ItemLevel?: `${NumOperator} ${number}`
     AreaLevel?: `${NumOperator} ${number}`
     GemLevel?: `${NumOperator} ${number}`
+    TransfiguredGem?: boolean
     StackSize?: `${NumOperator} ${number}`
     MapTier?: `${NumOperator} ${number}`
     Quality?: `${NumOperator} ${number}`

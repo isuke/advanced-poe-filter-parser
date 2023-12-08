@@ -87,6 +87,7 @@ condition =
   / conditionItemLevel
   / conditionAreaLevel
   / conditionGemLevel
+  / conditionTransfiguredGem
   / conditionStackSize
   / conditionMapTier
   / conditionQuality
@@ -132,6 +133,7 @@ conditionDropLevel              = attr:'DropLevel'              __ val:condition
 conditionItemLevel              = attr:'ItemLevel'              __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionAreaLevel              = attr:'AreaLevel'              __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionGemLevel               = attr:'GemLevel'               __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
+conditionTransfiguredGem        = attr:'TransfiguredGem'        __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionStackSize              = attr:'StackSize'              __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionMapTier                = attr:'MapTier'                __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionQuality                = attr:'Quality'                __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }

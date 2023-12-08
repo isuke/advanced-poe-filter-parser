@@ -107,6 +107,7 @@ Show "Section1"
     ItemLevel      >= 70
     AreaLevel      < 30
     GemLevel       = 10
+    TransfiguredGem True
     StackSize      < 11
     MapTier        <= 12
     Quality        = 15
@@ -209,6 +210,7 @@ Unset "Section6"
         ItemLevel: ">= 70",
         AreaLevel: "< 30",
         GemLevel: "= 10",
+        TransfiguredGem: true,
         StackSize: "< 11",
         MapTier: "<= 12",
         Quality: "= 15",
@@ -269,9 +271,9 @@ Unset "Section6"
           offset: 0,
         },
         end: {
-          line: 54,
+          line: 55,
           column: 1,
-          offset: 1558,
+          offset: 1583,
         },
       },
     },
@@ -311,14 +313,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 54,
+          line: 55,
           column: 1,
-          offset: 1558,
+          offset: 1583,
         },
         end: {
-          line: 71,
+          line: 72,
           column: 1,
-          offset: 2254,
+          offset: 2279,
         },
       },
     },
@@ -349,14 +351,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 71,
+          line: 72,
           column: 1,
-          offset: 2254,
+          offset: 2279,
         },
         end: {
-          line: 82,
+          line: 83,
           column: 1,
-          offset: 2617,
+          offset: 2642,
         },
       },
     },
@@ -375,14 +377,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 82,
+          line: 83,
           column: 1,
-          offset: 2617,
+          offset: 2642,
         },
         end: {
-          line: 88,
+          line: 89,
           column: 1,
-          offset: 2837,
+          offset: 2862,
         },
       },
     },
@@ -399,14 +401,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 88,
+          line: 89,
           column: 1,
-          offset: 2837,
+          offset: 2862,
         },
         end: {
-          line: 92,
+          line: 93,
           column: 1,
-          offset: 2979,
+          offset: 3004,
         },
       },
     },
@@ -422,14 +424,14 @@ Unset "Section6"
       branches: [],
       location: {
         start: {
-          line: 92,
+          line: 93,
           column: 1,
-          offset: 2979,
+          offset: 3004,
         },
         end: {
-          line: 95,
+          line: 96,
           column: 1,
-          offset: 3085,
+          offset: 3110,
         },
       },
     },
