@@ -176,10 +176,20 @@ conditionHasCruciblePassiveTree = attr:'HasCruciblePassiveTree' __ val:condition
 // Condition Values
 conditionValueArray = operator:(matchOperator __)? names:names { return operator ? { ope: operator[0], vals: names } : { ope: '=', vals: names } }
 conditionValueArrayOrNone = conditionValueArray / val:'None' { return val ?  { ope: undefined, val: 'None' } : { ope, vals } }
-conditionValueNumericAndArray = pre:((numOperator __ num __) / (matchOperator __))? names:names { return pre ? (pre.length === 4 ? { numeric: { ope: pre[0], val: pre[2] }, vals: names } : { ope: pre[0], vals: names } ) : { ope: '=', vals: names } }
-conditionValueNumber = operator:numOperator __ num:num { return `${operator} ${num}` }
-conditionValueSocketType = operator:(numOperator __)? num:(num)? socketType:socketType { return operator ? `${operator[0]} ${num ? num : ''}${socketType}` : `= ${num ? num : ''}${socketType}` }
-conditionValueRarity = operator:(numOperator __)? rarity:rarity { return operator ? `${operator[0]} ${rarity}` : rarity }
+conditionValueNumericAndArray = pre:((numOperator __ num __) / (matchOperator __))? names:names {
+  if (pre) {
+    if (pre.length === 4) {
+      return { numeric: { ope: pre[0], val: pre[2] }, vals: names }
+    } else {
+      return { ope: pre[0], vals: names }
+    }
+  } else {
+    return { ope: '=', vals: names }
+  }
+}
+conditionValueNumber = operator:numOperator __ num:num { return { ope: operator, val: num } }
+conditionValueSocketType = operator:(numOperator __)? num:(num)? socketType:socketType { return operator ? { ope: operator[0], val: `${num ? num : ''}${socketType}` } : { ope: '=', val: `${num ? num : ''}${socketType}` } }
+conditionValueRarity = operator:(numOperator __)? rarity:rarity { return operator ? { ope: operator[0], val: rarity } : { ope: '=', val: rarity } }
 conditionValueBoolean = boolean
 
 //

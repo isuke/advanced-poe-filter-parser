@@ -9,6 +9,13 @@ type Rarity = "Normal" | "Magic" | "Rare" | "Unique"
 type Influence = "Shaper" | "Elder" | "Crusader" | "Hunter" | "Redeemer" | "Warlord" | "None"
 type GemQualityType = "Superior" | "Divergent" | "Anomalous" | "Phantasmal"
 type SocketType = "R" | "G" | "B" | "W" | "A" | "D"
+type SocketGroup =
+  | SocketType
+  | `${SocketType}${SocketType}`
+  | `${SocketType}${SocketType}${SocketType}`
+  | `${SocketType}${SocketType}${SocketType}${SocketType}`
+  | `${SocketType}${SocketType}${SocketType}${SocketType}${SocketType}`
+  | `${SocketType}${SocketType}${SocketType}${SocketType}${SocketType}${SocketType}`
 
 type ColorName = "Red" | "Green" | "Blue" | "Brown" | "White" | "Yellow" | "Cyan" | "Grey" | "Orange" | "Pink" | "Purple"
 
@@ -83,23 +90,23 @@ type AdvancedBlock = {
   conditions: {
     Class?: { ope: MatchOperator; vals: string[] }
     BaseType?: { ope: MatchOperator; vals: string[] }
-    Rarity?: `${MatchOperator} ${Rarity}` | Rarity
-    BaseDefencePercentile?: `${NumOperator} ${number}`
-    BaseArmour?: `${NumOperator} ${number}`
-    BaseEnergyShield?: `${NumOperator} ${number}`
-    BaseEvasion?: `${NumOperator} ${number}`
-    BaseWard?: `${NumOperator} ${number}`
-    DropLevel?: `${NumOperator} ${number}`
-    ItemLevel?: `${NumOperator} ${number}`
-    AreaLevel?: `${NumOperator} ${number}`
-    GemLevel?: `${NumOperator} ${number}`
+    Rarity?: { ope: NumOperator; val: Rarity }
+    BaseDefencePercentile?: { ope: NumOperator; val: number }
+    BaseArmour?: { ope: NumOperator; val: number }
+    BaseEnergyShield?: { ope: NumOperator; val: number }
+    BaseEvasion?: { ope: NumOperator; val: number }
+    BaseWard?: { ope: NumOperator; val: number }
+    DropLevel?: { ope: NumOperator; val: number }
+    ItemLevel?: { ope: NumOperator; val: number }
+    AreaLevel?: { ope: NumOperator; val: number }
+    GemLevel?: { ope: NumOperator; val: number }
     TransfiguredGem?: boolean
-    StackSize?: `${NumOperator} ${number}`
-    MapTier?: `${NumOperator} ${number}`
-    Quality?: `${NumOperator} ${number}`
-    LinkedSockets?: `${NumOperator} ${number}`
-    Sockets?: `${NumOperator} ${number}${string}`
-    SocketGroup?: `${NumOperator} ${number}${string}`
+    StackSize?: { ope: NumOperator; val: number }
+    MapTier?: { ope: NumOperator; val: number }
+    Quality?: { ope: NumOperator; val: number }
+    LinkedSockets?: { ope: NumOperator; val: number }
+    Sockets?: { ope: NumOperator; vals: `${number}${SocketGroup}` | SocketGroup }
+    SocketGroup?: { ope: NumOperator; vals: `${number}${SocketGroup}` | SocketGroup }
     FracturedItem?: boolean
     SynthesisedItem?: boolean
     Corrupted?: boolean
@@ -110,16 +117,16 @@ type AdvancedBlock = {
     ElderMap?: boolean
     BlightedMap?: boolean
     UberBlightedMap?: boolean
-    Height?: `${NumOperator} ${number}`
-    Width?: `${NumOperator} ${number}`
-    CorruptedMods?: `${NumOperator} ${number}`
-    EnchantmentPassiveNum?: `${NumOperator} ${number}`
-    HasExplicitMod?: { ope: MatchOperator; vals: string[] }
+    Height?: { ope: NumOperator; val: number }
+    Width?: { ope: NumOperator; val: number }
+    CorruptedMods?: { ope: NumOperator; val: number }
+    EnchantmentPassiveNum?: { ope: NumOperator; val: number }
+    HasExplicitMod?: { numeric: { ope: NumOperator; val: number }; vals: string[] } | { ope: NumOperator; vals: string[] }
     HasImplicitMod?: boolean
-    HasEaterOfWorldsImplicit?: `${NumOperator} ${number}`
-    HasSearingExarchImplicit?: `${NumOperator} ${number}`
+    HasEaterOfWorldsImplicit?: { ope: NumOperator; val: number }
+    HasSearingExarchImplicit?: { ope: NumOperator; val: number }
     AnyEnchantment?: boolean
-    HasEnchantment?: { ope: MatchOperator; vals: string[] }
+    HasEnchantment?: { numeric: { ope: NumOperator; val: number }; vals: string[] } | { ope: NumOperator; vals: string[] }
     HasInfluence?: { ope: MatchOperator; vals: Influence[] }
     EnchantmentPassiveNode?: { ope: MatchOperator; vals: string[] }
     Replica?: boolean
