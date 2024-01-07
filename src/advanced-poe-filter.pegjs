@@ -192,24 +192,30 @@ action =
   / actionSetFontSize
   / actionPlayAlertSound
   / actionPlayAlertSoundPositional
+  / actionCustomAlertSound
+  / actionCustomAlertSoundOptional
+  / actionDisableDropSoundIfAlertSound
+  / actionEnableDropSoundIfAlertSound
   / actionDisableDropSound
   / actionEnableDropSound
-  / actionCustomAlertSound
   / actionMinimapIcon
   / actionPlayEffect
 
 // Action Attributes
-actionSetBorderColor           = attr:'SetBorderColor'           __ val:actionValueColor       { return { lineType: 'action', attr, val } }
-actionSetTextColor             = attr:'SetTextColor'             __ val:actionValueColor       { return { lineType: 'action', attr, val } }
-actionSetBackgroundColor       = attr:'SetBackgroundColor'       __ val:actionValueColor       { return { lineType: 'action', attr, val } }
-actionSetFontSize              = attr:'SetFontSize'              __ val:actionValueFontSize    { return { lineType: 'action', attr, val } }
-actionPlayAlertSound           = attr:'PlayAlertSound'           __ val:actionValueSound       { return { lineType: 'action', attr, val } }
-actionPlayAlertSoundPositional = attr:'PlayAlertSoundPositional' __ val:actionValueSound       { return { lineType: 'action', attr, val } }
-actionDisableDropSound         = attr:'DisableDropSound'                                       { return { lineType: 'action', attr, val: true } }
-actionEnableDropSound          = attr:'EnableDropSound'                                        { return { lineType: 'action', attr, val: true } }
-actionCustomAlertSound         = attr:'CustomAlertSound'         __ val:actionValueCustomSound { return { lineType: 'action', attr, val } }
-actionMinimapIcon              = attr:'MinimapIcon'              __ val:actionValueMinimapIcon { return { lineType: 'action', attr, val } }
-actionPlayEffect               = attr:'PlayEffect'               __ val:actionValuePlayEffect  { return { lineType: 'action', attr, val } }
+actionSetBorderColor               = attr:'SetBorderColor'           __ val:actionValueColor       { return { lineType: 'action', attr, val } }
+actionSetTextColor                 = attr:'SetTextColor'             __ val:actionValueColor       { return { lineType: 'action', attr, val } }
+actionSetBackgroundColor           = attr:'SetBackgroundColor'       __ val:actionValueColor       { return { lineType: 'action', attr, val } }
+actionSetFontSize                  = attr:'SetFontSize'              __ val:actionValueFontSize    { return { lineType: 'action', attr, val } }
+actionPlayAlertSound               = attr:'PlayAlertSound'           __ val:actionValueSound       { return { lineType: 'action', attr, val } }
+actionPlayAlertSoundPositional     = attr:'PlayAlertSoundPositional' __ val:actionValueSound       { return { lineType: 'action', attr, val } }
+actionCustomAlertSound             = attr:'CustomAlertSound'         __ val:actionValueCustomSound { return { lineType: 'action', attr, val } }
+actionCustomAlertSoundOptional     = attr:'CustomAlertSoundOptional' __ val:actionValueCustomSound { return { lineType: 'action', attr, val } }
+actionDisableDropSoundIfAlertSound = attr:'DisableDropSoundIfAlertSound'                           { return { lineType: 'action', attr, val: true } }
+actionEnableDropSoundIfAlertSound  = attr:'EnableDropSoundIfAlertSound'                            { return { lineType: 'action', attr, val: true } }
+actionDisableDropSound             = attr:'DisableDropSound'                                       { return { lineType: 'action', attr, val: true } }
+actionEnableDropSound              = attr:'EnableDropSound'                                        { return { lineType: 'action', attr, val: true } }
+actionMinimapIcon                  = attr:'MinimapIcon'              __ val:actionValueMinimapIcon { return { lineType: 'action', attr, val } }
+actionPlayEffect                   = attr:'PlayEffect'               __ val:actionValuePlayEffect  { return { lineType: 'action', attr, val } }
 
 // Action Functions
 actionFunctionColor =

@@ -148,8 +148,8 @@ Show "Section1"
     SetBackgroundColor       106 107 108
     SetFontSize              30
     PlayAlertSound           16 300
-    EnableDropSound
     CustomAlertSound         "C\\foobar\\sound.mp3" 300
+    EnableDropSound
     MinimapIcon              0 Red Circle
     PlayEffect               Red
     ArchnemesisMod           "Toxic"
@@ -167,8 +167,8 @@ Show "Section2"
     SetTextColor             103 104 105 201
     SetBackgroundColor       106 107 108 202
     PlayAlertSound           2
-    DisableDropSound
     CustomAlertSound         "C\\foobar\\sound.mp3"
+    DisableDropSound
     MinimapIcon              Medium Red Circle
     PlayEffect               Blue Temp
 Show "Section3"
@@ -192,9 +192,11 @@ Hide "Section5"
     SetBorderColor           Saturate(42%)
     SetTextColor             Desaturate(53%)
     SetBackgroundColor       Hex(123)
+    DisableDropSoundIfAlertSound
 Unset "Section6"
     SetBorderColor           Saturation(64%)
     SetTextColor             Lightness(75%)
+    EnableDropSoundIfAlertSound
 
    `
 
@@ -258,8 +260,8 @@ Unset "Section6"
         SetBackgroundColor: { rgb: { r: 106, g: 107, b: 108 }, alpha: 255 },
         SetFontSize: 30,
         PlayAlertSound: { id: "16", volume: 300 },
-        EnableDropSound: true,
         CustomAlertSound: { filePath: "C\\foobar\\sound.mp3", volume: 300 },
+        EnableDropSound: true,
         MinimapIcon: { size: "Largest", color: "Red", shape: "Circle" },
         PlayEffect: { color: "Red", temp: false },
       },
@@ -290,11 +292,11 @@ Unset "Section6"
         SetTextColor: { rgb: { r: 103, g: 104, b: 105 }, alpha: 201 },
         SetBackgroundColor: { rgb: { r: 106, g: 107, b: 108 }, alpha: 202 },
         PlayAlertSound: { id: "2", volume: undefined },
-        DisableDropSound: true,
         CustomAlertSound: {
           filePath: "C\\foobar\\sound.mp3",
           volume: undefined,
         },
+        DisableDropSound: true,
         MinimapIcon: { size: "Medium", color: "Red", shape: "Circle" },
         PlayEffect: { color: "Blue", temp: true },
       },
@@ -349,6 +351,7 @@ Unset "Section6"
         SetBorderColor: { function: "Saturate", val: 0.42 },
         SetTextColor: { function: "Desaturate", val: 0.53 },
         SetBackgroundColor: { function: "Hex", val: 123 },
+        DisableDropSoundIfAlertSound: true,
       },
       branches: [],
     },
@@ -360,6 +363,7 @@ Unset "Section6"
       actions: {
         SetBorderColor: { function: "Saturationv", val: 64 },
         SetTextColor: { function: "Lightness", val: 75 },
+        EnableDropSoundIfAlertSound: true,
       },
       branches: [],
     },

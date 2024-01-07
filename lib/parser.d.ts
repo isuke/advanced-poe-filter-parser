@@ -138,6 +138,12 @@ type AdvancedBlock = {
       filePath: string
       volume: number | undefined
     }
+    CustomAlertSoundOptional?: {
+      filePath: string
+      volume: number | undefined
+    }
+    DisableDropSoundIfAlertSound?: boolean
+    EnableDropSoundIfAlertSound?: boolean
     DisableDropSound?: boolean
     EnableDropSound?: boolean
   }
