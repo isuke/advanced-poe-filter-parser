@@ -262,7 +262,7 @@ Unset "Section6"
         PlayAlertSound: { id: "16", volume: 300 },
         CustomAlertSound: { filePath: "C\\foobar\\sound.mp3", volume: 300 },
         EnableDropSound: true,
-        MinimapIcon: { size: "Largest", color: "Red", shape: "Circle" },
+        MinimapIcon: { size: "Large", color: "Red", shape: "Circle" },
         PlayEffect: { color: "Red", temp: false },
       },
       branches: [],

@@ -270,10 +270,10 @@ rarity = 'Normal' / 'Magic' / 'Rare' / 'Unique'
 socketType = $('R'* 'G'* 'B'* 'W'* 'A'* 'D'*)
 rgbaNum = num:num &{ return 0 <= num && num <= 255 } { return num }
 fontSize = num:num &{ return 1 <= num && num <= 45 } { return num }
-minimapIconSize = val:('0' / '1' / '2' / 'Largest' / 'Medium' / 'Small') {
+minimapIconSize = val:('0' / '1' / '2' / 'Large' / 'Medium' / 'Small') {
   switch (val) {
       case '0':
-        return 'Largest'
+        return 'Large'
       case '1':
         return 'Medium'
       case '2':

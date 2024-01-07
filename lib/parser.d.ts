@@ -12,7 +12,7 @@ type SocketType = "R" | "G" | "B" | "W" | "A" | "D"
 
 type ColorName = "Red" | "Green" | "Blue" | "Brown" | "White" | "Yellow" | "Cyan" | "Grey" | "Orange" | "Pink" | "Purple"
 
-type MinimapIconSize = 0 | 1 | 2 | "0" | "1" | "2" | "Largest" | "Medium" | "Small"
+type MinimapIconSize = "Large" | "Medium" | "Small"
 type MinimapIconColor = ColorName
 type MinimapIconShape =
   | "Circle"
