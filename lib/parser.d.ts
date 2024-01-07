@@ -73,7 +73,8 @@ type SoundId =
   | "ShVaal"
 
 type RGBA = { rgb: { r: number; g: number; b: number }; alpha: number }
-type Sound = { id: SoundId; volume: number | undefined }
+type AlertSound = { id: SoundId; volume: number }
+type CustomAlertSound = { filePath: string; volume: number }
 
 type AdvancedBlock = {
   id: string
@@ -132,16 +133,10 @@ type AdvancedBlock = {
     SetBorderColor?: RGBA
     MinimapIcon?: { size: MinimapIconSize; color: MinimapIconColor; shape: MinimapIconShape }
     PlayEffect?: { color: PlayEffectColor; temp: boolean }
-    PlayAlertSound?: Sound
-    PlayAlertSoundPositional?: Sound
-    CustomAlertSound?: {
-      filePath: string
-      volume: number | undefined
-    }
-    CustomAlertSoundOptional?: {
-      filePath: string
-      volume: number | undefined
-    }
+    PlayAlertSound?: AlertSound
+    PlayAlertSoundPositional?: AlertSound
+    CustomAlertSound?: CustomAlertSound
+    CustomAlertSoundOptional?: CustomAlertSound
     DisableDropSoundIfAlertSound?: boolean
     EnableDropSoundIfAlertSound?: boolean
     DisableDropSound?: boolean

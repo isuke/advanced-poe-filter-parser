@@ -253,8 +253,8 @@ actionFunctionMinus = name:'Minus' '(' num:num ')' &{ return 0 <= num && num <= 
 // Action Values
 actionValueColor = color / actionFunctionColor
 actionValueFontSize = fontSize / actionFunctionFontSize
-actionValueSound = id:soundId volume:(__ soundVolume)? { return { id, volume: volume ? parseInt(volume[1], 10) : undefined } }
-actionValueCustomSound = filePath:string volume:(__ soundVolume)? { return { filePath, volume: volume ? parseInt(volume[1], 10) : undefined } }
+actionValueSound = id:soundId volume:(__ soundVolume)? { return { id, volume: volume ? parseInt(volume[1], 10) : 50 } }
+actionValueCustomSound = filePath:string volume:(__ soundVolume)? { return { filePath, volume: volume ? parseInt(volume[1], 10) : 100 } }
 actionValueBoolean = boolean
 actionValueMinimapIcon = size:minimapIconSize __ color:minimapIconColor __ shape:minimapIconShape { return { size, color, shape } }
 actionValuePlayEffect = color:playEffectColor temp:(__ 'Temp')? { return temp ? { color, temp: true } : { color, temp: false } }
