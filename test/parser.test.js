@@ -264,18 +264,6 @@ Unset "Section6"
         PlayEffect: { color: "Red", temp: false },
       },
       branches: [],
-      location: {
-        start: {
-          line: 1,
-          column: 1,
-          offset: 0,
-        },
-        end: {
-          line: 55,
-          column: 1,
-          offset: 1583,
-        },
-      },
     },
     {
       id: "0001",
@@ -311,18 +299,6 @@ Unset "Section6"
         PlayEffect: { color: "Blue", temp: true },
       },
       branches: [],
-      location: {
-        start: {
-          line: 55,
-          column: 1,
-          offset: 1583,
-        },
-        end: {
-          line: 72,
-          column: 1,
-          offset: 2279,
-        },
-      },
     },
     {
       id: "0001",
@@ -349,18 +325,6 @@ Unset "Section6"
         PlayAlertSoundPositional: { id: "ShAlchemy", volume: 200 },
       },
       branches: [],
-      location: {
-        start: {
-          line: 72,
-          column: 1,
-          offset: 2279,
-        },
-        end: {
-          line: 83,
-          column: 1,
-          offset: 2642,
-        },
-      },
     },
     {
       id: "0001",
@@ -375,18 +339,6 @@ Unset "Section6"
         PlayAlertSoundPositional: { id: "ShBlessed", volume: undefined },
       },
       branches: [],
-      location: {
-        start: {
-          line: 83,
-          column: 1,
-          offset: 2642,
-        },
-        end: {
-          line: 89,
-          column: 1,
-          offset: 2862,
-        },
-      },
     },
     {
       id: "0001",
@@ -399,18 +351,6 @@ Unset "Section6"
         SetBackgroundColor: { function: "Hex", val: 123 },
       },
       branches: [],
-      location: {
-        start: {
-          line: 89,
-          column: 1,
-          offset: 2862,
-        },
-        end: {
-          line: 93,
-          column: 1,
-          offset: 3004,
-        },
-      },
     },
     {
       id: "0001",
@@ -422,24 +362,12 @@ Unset "Section6"
         SetTextColor: { function: "Lightness", val: 75 },
       },
       branches: [],
-      location: {
-        start: {
-          line: 93,
-          column: 1,
-          offset: 3004,
-        },
-        end: {
-          line: 96,
-          column: 1,
-          offset: 3110,
-        },
-      },
     },
   ]
 
   const result = parse(script)
 
-  t.deepEqual(result, expected)
+  t.like(result, expected)
 })
 
 test("parse : empty section", (t) => {
@@ -456,24 +384,12 @@ Hide "All Section"
       conditions: {},
       actions: {},
       branches: [],
-      location: {
-        start: {
-          line: 1,
-          column: 1,
-          offset: 0,
-        },
-        end: {
-          line: 2,
-          column: 1,
-          offset: 19,
-        },
-      },
     },
   ]
 
   const result = parse(script)
 
-  t.deepEqual(result, expected)
+  t.like(result, expected)
 })
 
 test("parse : single section", (t) => {
@@ -500,24 +416,12 @@ Show "Map Section"
         PlayAlertSound: { id: "1", volume: 300 },
       },
       branches: [],
-      location: {
-        start: {
-          line: 1,
-          column: 1,
-          offset: 0,
-        },
-        end: {
-          line: 6,
-          column: 1,
-          offset: 108,
-        },
-      },
     },
   ]
 
   const result = parse(script)
 
-  t.deepEqual(result, expected)
+  t.like(result, expected)
 })
 
 test("parse : multi section", (t) => {
@@ -546,18 +450,6 @@ Hide "Remain Section"
       },
       actions: {},
       branches: [],
-      location: {
-        start: {
-          line: 1,
-          column: 1,
-          offset: 0,
-        },
-        end: {
-          line: 5,
-          column: 1,
-          offset: 59,
-        },
-      },
     },
     {
       id: "0001",
@@ -571,18 +463,6 @@ Hide "Remain Section"
         PlayAlertSound: { id: "1", volume: 300 },
       },
       branches: [],
-      location: {
-        start: {
-          line: 5,
-          column: 1,
-          offset: 59,
-        },
-        end: {
-          line: 10,
-          column: 1,
-          offset: 191,
-        },
-      },
     },
     {
       id: "0001",
@@ -591,24 +471,12 @@ Hide "Remain Section"
       conditions: {},
       actions: {},
       branches: [],
-      location: {
-        start: {
-          line: 10,
-          column: 1,
-          offset: 191,
-        },
-        end: {
-          line: 11,
-          column: 1,
-          offset: 213,
-        },
-      },
     },
   ]
 
   const result = parse(script)
 
-  t.deepEqual(result, expected)
+  t.like(result, expected)
 })
 
 test("parse : single fork", (t) => {
@@ -654,18 +522,6 @@ Show "Map Section"
               conditions: { Rarity: "Rare" },
               actions: { SetBackgroundColor: { rgb: { r: 255, g: 0, b: 0 }, alpha: 100 } },
               branches: [],
-              location: {
-                start: {
-                  line: 8,
-                  column: 9,
-                  offset: 135,
-                },
-                end: {
-                  line: 12,
-                  column: 1,
-                  offset: 215,
-                },
-              },
             },
             {
               id: "0002",
@@ -674,52 +530,16 @@ Show "Map Section"
               conditions: { Rarity: "Magic" },
               actions: {},
               branches: [],
-              location: {
-                start: {
-                  line: 12,
-                  column: 9,
-                  offset: 223,
-                },
-                end: {
-                  line: 14,
-                  column: 1,
-                  offset: 261,
-                },
-              },
             },
           ],
-          location: {
-            start: {
-              line: 7,
-              column: 5,
-              offset: 113,
-            },
-            end: {
-              line: 14,
-              column: 1,
-              offset: 261,
-            },
-          },
         },
       ],
-      location: {
-        start: {
-          line: 1,
-          column: 1,
-          offset: 0,
-        },
-        end: {
-          line: 14,
-          column: 1,
-          offset: 261,
-        },
-      },
     },
   ]
 
   const result = parse(script)
 
-  t.deepEqual(result, expected)
+  t.like(result, expected)
 })
 
 test("parse : single mixin", (t) => {
@@ -765,18 +585,6 @@ Show "Map Section"
               conditions: { Rarity: "Rare" },
               actions: { SetBackgroundColor: { rgb: { r: 255, g: 0, b: 0 }, alpha: 100 } },
               branches: [],
-              location: {
-                start: {
-                  line: 8,
-                  column: 9,
-                  offset: 136,
-                },
-                end: {
-                  line: 12,
-                  column: 1,
-                  offset: 216,
-                },
-              },
             },
             {
               id: "0002",
@@ -785,52 +593,16 @@ Show "Map Section"
               conditions: { Rarity: "Magic" },
               actions: {},
               branches: [],
-              location: {
-                start: {
-                  line: 12,
-                  column: 9,
-                  offset: 224,
-                },
-                end: {
-                  line: 14,
-                  column: 1,
-                  offset: 262,
-                },
-              },
             },
           ],
-          location: {
-            start: {
-              line: 7,
-              column: 5,
-              offset: 113,
-            },
-            end: {
-              line: 14,
-              column: 1,
-              offset: 262,
-            },
-          },
         },
       ],
-      location: {
-        start: {
-          line: 1,
-          column: 1,
-          offset: 0,
-        },
-        end: {
-          line: 14,
-          column: 1,
-          offset: 262,
-        },
-      },
     },
   ]
 
   const result = parse(script)
 
-  t.deepEqual(result, expected)
+  t.like(result, expected)
 })
 
 test("parse : multi mixin", (t) => {
@@ -878,18 +650,6 @@ Show "Map Section"
               conditions: { Rarity: "Rare" },
               actions: { SetBackgroundColor: { rgb: { r: 255, g: 0, b: 0 }, alpha: 100 } },
               branches: [],
-              location: {
-                start: {
-                  line: 5,
-                  column: 9,
-                  offset: 64,
-                },
-                end: {
-                  line: 9,
-                  column: 1,
-                  offset: 144,
-                },
-              },
             },
             {
               id: "0002",
@@ -898,32 +658,8 @@ Show "Map Section"
               conditions: { Rarity: "Magic" },
               actions: {},
               branches: [],
-              location: {
-                start: {
-                  line: 9,
-                  column: 9,
-                  offset: 152,
-                },
-                end: {
-                  line: 12,
-                  column: 1,
-                  offset: 191,
-                },
-              },
             },
           ],
-          location: {
-            start: {
-              line: 4,
-              column: 5,
-              offset: 41,
-            },
-            end: {
-              line: 12,
-              column: 1,
-              offset: 191,
-            },
-          },
         },
         {
           name: "Tier",
@@ -936,18 +672,6 @@ Show "Map Section"
               conditions: { MapTier: ">= 11" },
               actions: { PlayAlertSound: { id: "1", volume: 300 } },
               branches: [],
-              location: {
-                start: {
-                  line: 13,
-                  column: 9,
-                  offset: 216,
-                },
-                end: {
-                  line: 17,
-                  column: 1,
-                  offset: 294,
-                },
-              },
             },
             {
               id: "0004",
@@ -956,52 +680,16 @@ Show "Map Section"
               conditions: { MapTier: ">= 6" },
               actions: { PlayAlertSound: { id: "2", volume: 300 } },
               branches: [],
-              location: {
-                start: {
-                  line: 17,
-                  column: 9,
-                  offset: 302,
-                },
-                end: {
-                  line: 20,
-                  column: 1,
-                  offset: 380,
-                },
-              },
             },
           ],
-          location: {
-            start: {
-              line: 12,
-              column: 5,
-              offset: 195,
-            },
-            end: {
-              line: 20,
-              column: 1,
-              offset: 380,
-            },
-          },
         },
       ],
-      location: {
-        start: {
-          line: 1,
-          column: 1,
-          offset: 0,
-        },
-        end: {
-          line: 20,
-          column: 1,
-          offset: 380,
-        },
-      },
     },
   ]
 
   const result = parse(script)
 
-  t.deepEqual(result, expected)
+  t.like(result, expected)
 })
 
 test("parse : nested mixin", (t) => {
@@ -1049,18 +737,6 @@ Show "Map Section"
               conditions: { Rarity: "Rare" },
               actions: { SetBackgroundColor: { rgb: { r: 255, g: 0, b: 0 }, alpha: 100 } },
               branches: [],
-              location: {
-                start: {
-                  line: 5,
-                  column: 9,
-                  offset: 64,
-                },
-                end: {
-                  line: 9,
-                  column: 1,
-                  offset: 144,
-                },
-              },
             },
             {
               id: "0004",
@@ -1080,18 +756,6 @@ Show "Map Section"
                       conditions: { MapTier: ">= 11" },
                       actions: { PlayAlertSound: { id: "1", volume: 300 } },
                       branches: [],
-                      location: {
-                        start: {
-                          line: 13,
-                          column: 17,
-                          offset: 232,
-                        },
-                        end: {
-                          line: 17,
-                          column: 1,
-                          offset: 326,
-                        },
-                      },
                     },
                     {
                       id: "0003",
@@ -1100,78 +764,18 @@ Show "Map Section"
                       conditions: { MapTier: ">= 6" },
                       actions: { PlayAlertSound: { id: "2", volume: 300 } },
                       branches: [],
-                      location: {
-                        start: {
-                          line: 17,
-                          column: 17,
-                          offset: 342,
-                        },
-                        end: {
-                          line: 20,
-                          column: 1,
-                          offset: 436,
-                        },
-                      },
                     },
                   ],
-                  location: {
-                    start: {
-                      line: 12,
-                      column: 13,
-                      offset: 203,
-                    },
-                    end: {
-                      line: 20,
-                      column: 1,
-                      offset: 436,
-                    },
-                  },
                 },
               ],
-              location: {
-                start: {
-                  line: 9,
-                  column: 9,
-                  offset: 152,
-                },
-                end: {
-                  line: 20,
-                  column: 1,
-                  offset: 436,
-                },
-              },
             },
           ],
-          location: {
-            start: {
-              line: 4,
-              column: 5,
-              offset: 41,
-            },
-            end: {
-              line: 20,
-              column: 1,
-              offset: 436,
-            },
-          },
         },
       ],
-      location: {
-        start: {
-          line: 1,
-          column: 1,
-          offset: 0,
-        },
-        end: {
-          line: 20,
-          column: 1,
-          offset: 436,
-        },
-      },
     },
   ]
 
   const result = parse(script)
 
-  t.deepEqual(result, expected)
+  t.like(result, expected)
 })
