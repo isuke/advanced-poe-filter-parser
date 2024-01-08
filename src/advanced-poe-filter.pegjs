@@ -279,7 +279,7 @@ numOperator = '<=' / '>=' / '<' / '>' / '='
 matchOperator = '==' / '='
 rarity = 'Normal' / 'Magic' / 'Rare' / 'Unique'
 socketType = 'R' / 'G' / 'B' / 'W' / 'A' / 'D'
-socketTypes = vals:socketType|1..6| {
+socketTypes = vals:socketType|0..6| {
   const order = ['R', 'G', 'B', 'W', 'A', 'D']
   return vals.sort((left, right) => order.indexOf(left) - order.indexOf(right)).join('')
 }
