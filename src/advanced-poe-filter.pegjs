@@ -162,8 +162,8 @@ conditionCorruptedMods          = attr:'CorruptedMods'          __ val:condition
 conditionEnchantmentPassiveNum  = attr:'EnchantmentPassiveNum'  __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionHasExplicitMod         = attr:'HasExplicitMod'         __ val:conditionValueNumericAndArray { return { lineType: 'condition', attr, val} }
 conditionHasImplicitMod         = attr:'HasImplicitMod'         __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
-conditionHasEaterOfWorldsImplicit = attr:'HasEaterOfWorldsImplicit' __ val:conditionValueNumber      { return { lineType: 'condition', attr, val} }
-conditionHasSearingExarchImplicit = attr:'HasSearingExarchImplicit' __ val:conditionValueNumber      { return { lineType: 'condition', attr, val} }
+conditionHasEaterOfWorldsImplicit = attr:'HasEaterOfWorldsImplicit' __ val:conditionValueImplicitModTier { return { lineType: 'condition', attr, val} }
+conditionHasSearingExarchImplicit = attr:'HasSearingExarchImplicit' __ val:conditionValueImplicitModTier { return { lineType: 'condition', attr, val} }
 conditionAnyEnchantment         = attr:'AnyEnchantment'         __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionHasEnchantment         = attr:'HasEnchantment'         __ val:conditionValueNumericAndArray { return { lineType: 'condition', attr, val} }
 conditionHasInfluence           = attr:'HasInfluence'           __ val:conditionValueArrayOrNone     { return { lineType: 'condition', attr, val} }
@@ -191,6 +191,7 @@ conditionValueNumber = operator:numOperator __ num:num { return { ope: operator,
 conditionValueSocketType = operator:(numOperator __)? num:(num)? socketType:socketType { return operator ? { ope: operator[0], val: `${num ? num : ''}${socketType}` } : { ope: '=', val: `${num ? num : ''}${socketType}` } }
 conditionValueRarity = operator:(numOperator __)? rarity:rarity { return operator ? { ope: operator[0], val: rarity } : { ope: '=', val: rarity } }
 conditionValueBoolean = boolean
+conditionValueImplicitModTier = operator:numOperator __ modTier:implicitModTier { return { ope: operator, val: modTier } }
 
 //
 // Action
@@ -279,19 +280,37 @@ matchOperator = '==' / '='
 rarity = 'Normal' / 'Magic' / 'Rare' / 'Unique'
 socketType = $('R'* 'G'* 'B'* 'W'* 'A'* 'D'*)
 rgbaNum = num:num &{ return 0 <= num && num <= 255 } { return num }
+implicitModTier = val:('1' / '2' / '3' / '4' / '5' / '6' / 'Lesser' / 'Greater' / 'Grand' / 'Exceptional' / 'Exquisite' / 'Perfect') {
+  switch (val) {
+    case '1':
+      return 'Lesser'
+    case '2':
+      return 'Greater'
+    case '3':
+      return 'Grand'
+    case '4':
+      return 'Exceptional'
+    case '5':
+      return 'Exquisite'
+    case '6':
+      return 'Perfect'
+    default:
+      return val
+  }
+}
 fontSize = num:num &{ return 1 <= num && num <= 45 } { return num }
 minimapIconSize = val:('0' / '1' / '2' / 'Large' / 'Medium' / 'Small') {
   switch (val) {
-      case '0':
-        return 'Large'
-      case '1':
-        return 'Medium'
-      case '2':
-        return 'Small'
-      default:
-        return val
-    }
+    case '0':
+      return 'Large'
+    case '1':
+      return 'Medium'
+    case '2':
+      return 'Small'
+    default:
+      return val
   }
+}
 minimapIconColor = 'Red' / 'Green' / 'Blue' / 'Brown' / 'White' / 'Yellow' / 'Cyan' / 'Grey' / 'Orange' / 'Pink' / 'Purple'
 minimapIconShape = 'Circle' / 'Diamond' / 'Hexagon' / 'Square' / 'Star' / 'Triangle' / 'Cross' / 'Moon' / 'Raindrop' / 'Kite' / 'Pentagon' / 'UpsideDownHouse'
 playEffectColor = 'Red' / 'Green' / 'Blue' / 'Brown' / 'White' / 'Yellow' / 'Cyan' / 'Grey' / 'Orange' / 'Pink' / 'Purple'

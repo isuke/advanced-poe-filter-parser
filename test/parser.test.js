@@ -161,6 +161,8 @@ Show "Section2"
     SocketGroup    5RGBWAD
     Rarity         Rare
     HasExplicitMod == "Foo" "Bar"
+    HasEaterOfWorldsImplicit >= Greater
+    HasSearingExarchImplicit >= Greater
     HasEnchantment == "Foo" "Bar"
     HasInfluence   == "Shaper" "Elder"
     SetBorderColor           100 101 102 200
@@ -241,8 +243,8 @@ Unset "Section6"
         EnchantmentPassiveNum: { ope: ">", val: 5 },
         HasExplicitMod: { ope: "=", vals: ["Foo", "Bar"] },
         HasImplicitMod: true,
-        HasEaterOfWorldsImplicit: { ope: ">=", val: 4 },
-        HasSearingExarchImplicit: { ope: ">=", val: 4 },
+        HasEaterOfWorldsImplicit: { ope: ">=", val: "Exceptional" },
+        HasSearingExarchImplicit: { ope: ">=", val: "Exceptional" },
         AnyEnchantment: true,
         HasEnchantment: { ope: "=", vals: ["Foo", "Bar"] },
         HasInfluence: { ope: "=", vals: ["Shaper", "Elder"] },
@@ -284,6 +286,8 @@ Unset "Section6"
         SocketGroup: { ope: "=", val: "5RGBWAD" },
         Rarity: { ope: "=", val: "Rare" },
         HasExplicitMod: { ope: "==", vals: ["Foo", "Bar"] },
+        HasEaterOfWorldsImplicit: { ope: ">=", val: "Greater" },
+        HasSearingExarchImplicit: { ope: ">=", val: "Greater" },
         HasEnchantment: { ope: "==", vals: ["Foo", "Bar"] },
         HasInfluence: { ope: "==", vals: ["Shaper", "Elder"] },
       },

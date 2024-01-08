@@ -16,6 +16,7 @@ type SocketGroup =
   | `${SocketType}${SocketType}${SocketType}${SocketType}`
   | `${SocketType}${SocketType}${SocketType}${SocketType}${SocketType}`
   | `${SocketType}${SocketType}${SocketType}${SocketType}${SocketType}${SocketType}`
+type ImplicitModTier = "Lesser" | "Greater" | "Grand" | "Exceptional" | "Exquisite" | "Perfect"
 
 type ColorName = "Red" | "Green" | "Blue" | "Brown" | "White" | "Yellow" | "Cyan" | "Grey" | "Orange" | "Pink" | "Purple"
 
@@ -123,8 +124,8 @@ type AdvancedBlock = {
     EnchantmentPassiveNum?: { ope: NumOperator; val: number }
     HasExplicitMod?: { numeric: { ope: NumOperator; val: number }; vals: string[] } | { ope: NumOperator; vals: string[] }
     HasImplicitMod?: boolean
-    HasEaterOfWorldsImplicit?: { ope: NumOperator; val: number }
-    HasSearingExarchImplicit?: { ope: NumOperator; val: number }
+    HasEaterOfWorldsImplicit?: { ope: NumOperator; val: ImplicitModTier }
+    HasSearingExarchImplicit?: { ope: NumOperator; val: ImplicitModTier }
     AnyEnchantment?: boolean
     HasEnchantment?: { numeric: { ope: NumOperator; val: number }; vals: string[] } | { ope: NumOperator; vals: string[] }
     HasInfluence?: { ope: MatchOperator; vals: Influence[] }
