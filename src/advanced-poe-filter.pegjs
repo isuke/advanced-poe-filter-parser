@@ -188,7 +188,7 @@ conditionValueNumericAndArray = pre:((numOperator __ num __) / (matchOperator __
   }
 }
 conditionValueNumber = operator:numOperator __ num:num { return { ope: operator, val: num } }
-conditionValueSocketType = operator:(numOperator __)? num:(num)? socketType:socketType { return operator ? { ope: operator[0], val: `${num ? num : ''}${socketType}` } : { ope: '=', val: `${num ? num : ''}${socketType}` } }
+conditionValueSocketType = operator:(numOperator __)? num:(num)? socketTypes:socketTypes { return operator ? { ope: operator[0], val: `${num ? num : ''}${socketTypes}` } : { ope: '=', val: `${num ? num : ''}${socketTypes}` } }
 conditionValueRarity = operator:(numOperator __)? rarity:rarity { return operator ? { ope: operator[0], val: rarity } : { ope: '=', val: rarity } }
 conditionValueBoolean = boolean
 conditionValueImplicitModTier = operator:numOperator __ modTier:implicitModTier { return { ope: operator, val: modTier } }
@@ -278,7 +278,12 @@ color = r:rgbaNum __ g:rgbaNum __ b:rgbaNum alpha:(__ rgbaNum)? { return { rgb: 
 numOperator = '<=' / '>=' / '<' / '>' / '='
 matchOperator = '==' / '='
 rarity = 'Normal' / 'Magic' / 'Rare' / 'Unique'
-socketType = $('R'* 'G'* 'B'* 'W'* 'A'* 'D'*)
+socketType = 'R' / 'G' / 'B' / 'W' / 'A' / 'D'
+socketTypes = vals:socketType|1..6| {
+  const order = ['R', 'G', 'B', 'W', 'A', 'D']
+  return vals.sort((left, right) => order.indexOf(left) - order.indexOf(right)).join('')
+}
+
 rgbaNum = num:num &{ return 0 <= num && num <= 255 } { return num }
 implicitModTier = val:('1' / '2' / '3' / '4' / '5' / '6' / 'Lesser' / 'Greater' / 'Grand' / 'Exceptional' / 'Exquisite' / 'Perfect') {
   switch (val) {

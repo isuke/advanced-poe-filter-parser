@@ -116,7 +116,7 @@ Show "Section1"
     Quality        = 15
     LinkedSockets  = 6
     Sockets        >= 5RGBWAD
-    SocketGroup    >= 5RGBWAD
+    SocketGroup    >= 5ADRGBW
     Rarity         = Rare
     BaseDefencePercentile > 50
     BaseArmour       > 40
@@ -161,7 +161,7 @@ Show "Section2"
     Class          "Life Flasks" "Mana Flasks" "Hybrid Flasks"
     BaseType       "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Bone Helmet"
     Sockets        5RGBWAD
-    SocketGroup    5RGBWAD
+    SocketGroup    5ADRGBW
     Rarity         Rare
     HasExplicitMod == "Foo" "Bar"
     HasEaterOfWorldsImplicit >= Greater
@@ -178,7 +178,7 @@ Show "Section2"
     PlayEffect               Blue Temp
 Show "Section3"
     Sockets        RGBWAD
-    SocketGroup    RGBWAD
+    SocketGroup    ADRGBW
     HasExplicitMod >= 2 "Foo" "Bar"
     HasEnchantment >= 2 "Foo" "Bar"
     HasInfluence None
