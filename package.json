@@ -24,20 +24,19 @@
     "lint:fix": "eslint --fix test/**/*.js",
     "prettier": "prettier --write --log-level=warn '**/*.js'",
     "test": "ava --verbose",
-    "build:c": "pegjs -o lib/parser.cjs src/advanced-poe-filter.pegjs --format=commonjs",
-    "build:m": "pegjs -o lib/parser.mjs src/advanced-poe-filter.pegjs --format=es",
+    "build:c": "peggy -o lib/parser.cjs src/advanced-poe-filter.pegjs --format=commonjs",
+    "build:m": "peggy -o lib/parser.mjs src/advanced-poe-filter.pegjs --format=es",
     "build": "npm run --silent build:c; npm rum --silent build:m",
     "predeploy": "npm run build",
     "deploy": "npm publish"
   },
-  "dependencies": {},
   "devDependencies": {
-    "ava": "5.3.1",
-    "eslint": "8.48.0",
-    "eslint-config-prettier": "9.0.0",
+    "ava": "6.0.1",
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "9.1.0",
     "outdent": "0.8.0",
-    "pegjs": "0.11.0-master.b7b87ea",
-    "prettier": "3.0.3",
-    "sinon": "15.2.0"
+    "peggy": "3.0.2",
+    "prettier": "3.1.1",
+    "sinon": "17.0.1"
   }
 }

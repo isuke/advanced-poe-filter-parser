@@ -44,6 +44,7 @@ test("parse : blank and comment lines", (t) => {
           column: 1,
           offset: 136,
         },
+        source: undefined,
       },
     },
     {
@@ -69,6 +70,7 @@ test("parse : blank and comment lines", (t) => {
           column: 1,
           offset: 317,
         },
+        source: undefined,
       },
     },
     {
@@ -89,6 +91,7 @@ test("parse : blank and comment lines", (t) => {
           column: 1,
           offset: 339,
         },
+        source: undefined,
       },
     },
   ]

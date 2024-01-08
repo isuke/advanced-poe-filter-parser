@@ -154,6 +154,7 @@ type AdvancedBlock = {
   location: {
     start: { line: number; column: number; offset: number }
     end: { line: number; column: number; offset: number }
+    source: string | undefined
   }
 }
 
