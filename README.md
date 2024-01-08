@@ -32,7 +32,7 @@ const object = parse(script)
   //     activity: 'Show',
   //     conditions: {
   //       Class: { ope: '=', vals: ['Maps'] },
-  //       MapTier: '> 3',
+  //       MapTier: { ope: '>', val: 3 },
   //     },
   //     actions: {
   //       SetBorderColor: { rgb: { r: 250, g: 251, b: 252 }, alpha: 255 },
@@ -47,36 +47,44 @@ const object = parse(script)
   //             id: '0001',
   //             name: 'Rare',
   //             activity: 'Show',
-  //             conditions: { Rarity: 'Rare' },
+  //             conditions: {
+  //               Rarity: { ope: '=', val: 'Rare' },
+  //             },
   //             actions: { SetBackgroundColor: { rgb: { r: 255, g: 0, b: 0 }, alpha: 100 } },
   //             branches: [],
   //             location: {
   //               start: { line: 8, column: 9, offset: 135 },
   //               end: { line: 12, column: 1, offset: 215 },
+  //               source: undefined,
   //             },
   //           },
   //           {
   //             id: '0002',
   //             name: 'Magic',
   //             activity: 'Hide',
-  //             conditions: { Rarity: 'Magic' },
+  //             conditions: {
+  //               Rarity: { ope: '=', val: 'Magic' },
+  //             },
   //             actions: {},
   //             branches: [],
   //             location: {
   //               start: { line: 12, column: 9, offset: 223 },
   //               end: { line: 14, column: 1, offset: 261 },
+  //               source: undefined,
   //             },
   //           },
   //         ],
   //         location: {
   //           start: { line: 7, column: 5, offset: 113 },
   //           end: { line: 14, column: 1, offset: 261 },
+  //           source: undefined,
   //         },
   //       },
   //     ],
   //     location: {
   //       start: { line: 1, column: 1, offset: 0 },
   //       end: { line: 14, column: 1, offset: 261 },
+  //       source: undefined,
   //     },
   //   },
   // ]
