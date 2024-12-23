@@ -104,6 +104,7 @@ type AdvancedBlock = {
     TransfiguredGem?: boolean
     StackSize?: { ope: NumOperator; val: number }
     MapTier?: { ope: NumOperator; val: number }
+    WaystoneTier?: { ope: NumOperator; val: number }
     Quality?: { ope: NumOperator; val: number }
     LinkedSockets?: { ope: NumOperator; val: number }
     Sockets?: { ope: NumOperator; vals: `${number}${SocketGroup}` | SocketGroup }

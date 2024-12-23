@@ -90,6 +90,7 @@ condition =
   / conditionTransfiguredGem
   / conditionStackSize
   / conditionMapTier
+  / conditionWaystoneTier
   / conditionQuality
   / conditionLinkedSockets
   / conditionSockets
@@ -136,6 +137,7 @@ conditionGemLevel               = attr:'GemLevel'               __ val:condition
 conditionTransfiguredGem        = attr:'TransfiguredGem'        __ val:conditionValueBoolean         { return { lineType: 'condition', attr, val} }
 conditionStackSize              = attr:'StackSize'              __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionMapTier                = attr:'MapTier'                __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
+conditionWaystoneTier           = attr:'WaystoneTier'           __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionQuality                = attr:'Quality'                __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionLinkedSockets          = attr:'LinkedSockets'          __ val:conditionValueNumber          { return { lineType: 'condition', attr, val} }
 conditionSockets                = attr:'Sockets'                __ val:conditionValueSocketType      { return { lineType: 'condition', attr, val} }

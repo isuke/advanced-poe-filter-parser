@@ -113,6 +113,7 @@ Show "Section1"
     TransfiguredGem True
     StackSize      < 11
     MapTier        <= 12
+    WaystoneTier   <= 13
     Quality        = 15
     LinkedSockets  = 6
     Sockets        >= 0
@@ -220,6 +221,7 @@ Unset "Section6"
         TransfiguredGem: true,
         StackSize: { ope: "<", val: 11 },
         MapTier: { ope: "<=", val: 12 },
+        WaystoneTier: { ope: "<=", val: 13 },
         Quality: { ope: "=", val: 15 },
         LinkedSockets: { ope: "=", val: 6 },
         Sockets: { ope: ">=", val: "0" },
