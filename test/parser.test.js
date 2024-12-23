@@ -115,7 +115,7 @@ Show "Section1"
     MapTier        <= 12
     Quality        = 15
     LinkedSockets  = 6
-    Sockets        >= 5RGBWAD
+    Sockets        >= 0
     SocketGroup    >= 5ADRGBW
     Rarity         = Rare
     BaseDefencePercentile > 50
@@ -222,7 +222,7 @@ Unset "Section6"
         MapTier: { ope: "<=", val: 12 },
         Quality: { ope: "=", val: 15 },
         LinkedSockets: { ope: "=", val: 6 },
-        Sockets: { ope: ">=", val: "5RGBWAD" },
+        Sockets: { ope: ">=", val: "0" },
         SocketGroup: { ope: ">=", val: "5RGBWAD" },
         Rarity: { ope: "=", val: "Rare" },
         BaseDefencePercentile: { ope: ">", val: 50 },

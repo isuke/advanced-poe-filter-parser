@@ -188,7 +188,7 @@ conditionValueNumericAndArray = pre:((numOperator __ num __) / (matchOperator __
   }
 }
 conditionValueNumber = operator:numOperator __ num:num { return { ope: operator, val: num } }
-conditionValueSocketType = operator:(numOperator __)? num:(num)? socketTypes:socketTypes { return operator ? { ope: operator[0], val: `${num ? num : ''}${socketTypes}` } : { ope: '=', val: `${num ? num : ''}${socketTypes}` } }
+conditionValueSocketType = operator:(numOperator __)? num:(num)? socketTypes:socketTypes { return operator ? { ope: operator[0], val: `${num == undefined ? '' : num}${socketTypes}` } : { ope: '=', val: `${num == undefined ? '' : num}${socketTypes}` } }
 conditionValueRarity = operator:(numOperator __)? rarity:rarity { return operator ? { ope: operator[0], val: rarity } : { ope: '=', val: rarity } }
 conditionValueBoolean = boolean
 conditionValueImplicitModTier = operator:numOperator __ modTier:implicitModTier { return { ope: operator, val: modTier } }
